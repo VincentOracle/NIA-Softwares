@@ -170,3 +170,4 @@ NIA SOFTwares
     ├── Terms & Conditions
     ├── Privacy Policy
     └── Cookie Policy
+    └── Cookie Policy

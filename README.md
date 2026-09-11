@@ -9,6 +9,7 @@ NIA Softwares is an AI, Data & Technology Agency focused on building intelligent
 We combine **artificial intelligence, software engineering, data, automation, and systems thinking** to help organizations solve complex problems, improve operations, and make better decisions.
 
 ---
+<img width="1600" height="721" alt="image" src="https://github.com/user-attachments/assets/b9045993-4abd-42d6-90cf-b2a498e0b056" />
 
 ## Overview
 

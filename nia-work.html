@@ -85,6 +85,470 @@
         }
       }
     </script>
+    <link rel="icon" href="img/icon-logo.JPG" type="image/png" />
+    <style>
+      /* ============================================================
+   NIA OUR WORK PAGE — PAGE-SCOPED STYLES
+   Fixes: featured preview, project cards, filter bar, case
+   studies, technology section, coming soon, and full mobile.
+   ============================================================ */
+
+      /* ---------- Work Hero ---------- */
+      .hero-header .display-4 {
+        line-height: 1.15;
+      }
+
+      /* ---------- Filter Bar ---------- */
+      .nia-work-filter {
+        gap: 10px !important;
+        padding: 6px 0;
+        scrollbar-width: thin;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start !important;
+      }
+      .nia-work-filter::-webkit-scrollbar {
+        height: 5px;
+      }
+      .nia-work-filter::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .nia-work-filter::-webkit-scrollbar-thumb {
+        background: rgba(19, 99, 198, 0.25);
+        border-radius: 5px;
+      }
+      .nia-work-filter .nia-filter-btn {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        font-size: 0.85rem;
+        font-weight: 500;
+        padding: 8px 18px !important;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          background-color 0.2s ease,
+          color 0.2s ease,
+          border-color 0.2s ease;
+      }
+      .nia-work-filter .nia-filter-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(19, 99, 198, 0.12);
+      }
+      .nia-work-filter .nia-filter-btn.active,
+      .nia-work-filter .nia-filter-btn.btn-primary {
+        box-shadow: 0 6px 16px rgba(19, 99, 198, 0.25);
+      }
+      .nia-work-filter .nia-filter-btn:focus-visible {
+        outline: 2px solid var(--primary, #1363c6);
+        outline-offset: 2px;
+      }
+
+      @media (min-width: 992px) {
+        .nia-work-filter {
+          justify-content: center !important;
+          flex-wrap: wrap;
+        }
+      }
+
+      /* ---------- Featured Project Preview (GunduziAI browser mockup) ---------- */
+      .nia-featured-visual {
+        position: relative;
+      }
+      .nia-featured-visual.project-preview {
+        border-radius: 14px;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid rgba(20, 24, 62, 0.08);
+        box-shadow: 0 20px 50px rgba(20, 24, 62, 0.12);
+        transition:
+          box-shadow 0.35s ease,
+          transform 0.35s ease;
+      }
+      .nia-featured-visual.project-preview:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 28px 60px rgba(20, 24, 62, 0.18);
+      }
+
+      /* Browser bar */
+      .nia-featured-visual .browser-bar,
+      .nia-project-preview .browser-bar {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 12px 16px;
+        background: #f1f3f8;
+        border-bottom: 1px solid rgba(20, 24, 62, 0.08);
+      }
+      .nia-featured-visual .browser-bar .dot,
+      .nia-project-preview .browser-bar .dot {
+        display: inline-block;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: #d3d6de;
+      }
+      .nia-featured-visual .browser-bar .dot:nth-child(1),
+      .nia-project-preview .browser-bar .dot:nth-child(1) {
+        background: #ff5f57;
+      }
+      .nia-featured-visual .browser-bar .dot:nth-child(2),
+      .nia-project-preview .browser-bar .dot:nth-child(2) {
+        background: #ffbd2e;
+      }
+      .nia-featured-visual .browser-bar .dot:nth-child(3),
+      .nia-project-preview .browser-bar .dot:nth-child(3) {
+        background: #28c840;
+      }
+      .nia-featured-visual .browser-bar .browser-title,
+      .nia-project-preview .browser-bar .browser-title {
+        margin-left: 12px;
+        font-size: 0.82rem;
+        color: #666;
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* Scrollable screenshot area */
+      .project-screen-scroll {
+        max-height: 520px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background: #eef1f7;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(19, 99, 198, 0.35) transparent;
+      }
+      .project-screen-scroll::-webkit-scrollbar {
+        width: 8px;
+      }
+      .project-screen-scroll::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .project-screen-scroll::-webkit-scrollbar-thumb {
+        background: rgba(19, 99, 198, 0.3);
+        border-radius: 8px;
+        border: 2px solid #eef1f7;
+      }
+      .project-screen-scroll::-webkit-scrollbar-thumb:hover {
+        background: rgba(19, 99, 198, 0.55);
+      }
+      .project-screen-scroll img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: top center;
+        transition: transform 0.6s ease;
+      }
+      .nia-featured-visual:hover .project-screen-scroll img {
+        transform: scale(1.02);
+      }
+
+      /* Responsive tweaks for the featured preview */
+      @media (max-width: 991.98px) {
+        .project-screen-scroll {
+          max-height: 380px;
+        }
+      }
+      @media (max-width: 575.98px) {
+        .project-screen-scroll {
+          max-height: 300px;
+        }
+        .nia-featured-visual .browser-bar .browser-title {
+          font-size: 0.75rem;
+        }
+      }
+
+      /* ---------- Tech pills ---------- */
+      .nia-tech-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .nia-tech-pill {
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 50px;
+        background: var(--light, #f4f7fe);
+        color: var(--dark, #14183e);
+        font-size: 0.78rem;
+        font-weight: 500;
+        border: 1px solid rgba(19, 99, 198, 0.12);
+        transition:
+          background-color 0.2s ease,
+          color 0.2s ease,
+          border-color 0.2s ease,
+          transform 0.2s ease;
+      }
+      .nia-tech-pill:hover {
+        background: var(--primary, #1363c6);
+        color: #fff;
+        border-color: var(--primary, #1363c6);
+        transform: translateY(-1px);
+      }
+      .nia-tech-pill-dark {
+        background: rgba(255, 255, 255, 0.08);
+        color: #d5d9e8;
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+      .nia-tech-pill-dark:hover {
+        background: var(--primary, #1363c6);
+        color: #fff;
+        border-color: var(--primary, #1363c6);
+      }
+
+      /* ---------- Project Card (grid) ---------- */
+      .nia-project-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease,
+          border-color 0.35s ease;
+      }
+      .nia-project-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--primary, #1363c6) !important;
+        box-shadow: 0 20px 45px rgba(19, 99, 198, 0.12);
+      }
+      .nia-project-card-media {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        background: #eef1f7;
+      }
+      .nia-project-card-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        transition: transform 0.6s ease;
+      }
+      .nia-project-card:hover .nia-project-card-media img {
+        transform: scale(1.06);
+      }
+      .nia-status-badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        padding: 5px 12px;
+        border-radius: 50px;
+        text-transform: uppercase;
+      }
+      .nia-project-card h5 {
+        color: var(--dark, #14183e);
+        font-weight: 700;
+      }
+      .nia-project-card .btn {
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .nia-project-card .btn:hover {
+        transform: translateX(2px);
+      }
+
+      /* ---------- Case Study Panels ---------- */
+      .nia-case-study-panel {
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease,
+          border-color 0.35s ease;
+      }
+      .nia-case-study-panel:hover {
+        transform: translateY(-4px);
+        border-color: var(--primary, #1363c6) !important;
+        box-shadow: 0 20px 45px rgba(19, 99, 198, 0.1);
+      }
+      .nia-case-step {
+        margin-bottom: 20px;
+        padding-bottom: 18px;
+        border-bottom: 1px dashed rgba(20, 24, 62, 0.1);
+      }
+      .nia-case-step:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .nia-case-step h6 {
+        color: var(--primary, #1363c6);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .nia-case-step p {
+        color: #555;
+        line-height: 1.6;
+      }
+
+      /* ---------- Technology Group Cards ---------- */
+      .nia-tech-group {
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .nia-tech-group:hover {
+        transform: translateY(-4px);
+        border-color: var(--primary, #1363c6) !important;
+        box-shadow: 0 18px 40px rgba(19, 99, 198, 0.18);
+      }
+
+      /* ---------- Client Results Cards ---------- */
+      #client-results .rounded.border {
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      #client-results .rounded.border:hover {
+        transform: translateY(-3px);
+        border-color: var(--primary, #1363c6) !important;
+        box-shadow: 0 14px 32px rgba(19, 99, 198, 0.08);
+      }
+
+      /* ---------- Empty State ---------- */
+      .nia-empty-state {
+        background: var(--light, #f4f7fe);
+        border-radius: 14px;
+        border: 1px dashed rgba(19, 99, 198, 0.3);
+        padding: 60px 20px;
+      }
+      .nia-empty-state i {
+        color: var(--primary, #1363c6);
+      }
+
+      /* ---------- Project Modal ---------- */
+      #projectModal .modal-content {
+        border: none;
+        border-radius: 16px;
+        overflow: hidden;
+      }
+      #projectModal .modal-header {
+        background: var(--light, #f4f7fe);
+        border-bottom: 1px solid rgba(20, 24, 62, 0.08);
+        padding: 18px 24px;
+      }
+      #projectModal .modal-title {
+        color: var(--dark, #14183e);
+        font-weight: 700;
+      }
+      #projectModal .modal-body {
+        padding: 24px;
+      }
+      #projectModal .nia-project-preview {
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid rgba(20, 24, 62, 0.08);
+        background: #fff;
+      }
+      #projectModal .project-screen-scroll {
+        max-height: 460px;
+      }
+      #projectModal .nia-tech-pill {
+        background: var(--light, #f4f7fe);
+      }
+      #projectModal .modal-footer {
+        border-top: 1px solid rgba(20, 24, 62, 0.08);
+        padding: 16px 24px;
+      }
+
+      /* ---------- Hero image on Work page ---------- */
+      .hero-header img.img-fluid {
+        max-height: 420px;
+        object-fit: contain;
+      }
+
+      /* ---------- Responsive ---------- */
+      @media (max-width: 991.98px) {
+        .hero-header .display-4 {
+          font-size: 2.25rem;
+        }
+        .nia-work-filter {
+          padding-left: 4px;
+          padding-right: 4px;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .hero-header .display-4 {
+          font-size: 1.85rem;
+        }
+        .hero-header img.img-fluid {
+          max-height: 280px;
+        }
+        .nia-project-card-media {
+          aspect-ratio: 16 / 9;
+        }
+        .nia-case-step {
+          margin-bottom: 16px;
+          padding-bottom: 14px;
+        }
+        #projectModal .modal-body {
+          padding: 18px;
+        }
+        #projectModal .project-screen-scroll {
+          max-height: 340px;
+        }
+      }
+
+      @media (max-width: 419.98px) {
+        .hero-header .display-4 {
+          font-size: 1.6rem;
+        }
+        .nia-work-filter .nia-filter-btn {
+          font-size: 0.78rem;
+          padding: 7px 14px !important;
+        }
+        .nia-tech-pill {
+          font-size: 0.72rem;
+          padding: 4px 10px;
+        }
+        .project-screen-scroll {
+          max-height: 260px;
+        }
+      }
+
+      /* ---------- Print ---------- */
+      @media print {
+        .nia-work-filter,
+        .back-to-top,
+        .sticky-top,
+        .footer,
+        #projectModal {
+          display: none !important;
+        }
+        .nia-project-card,
+        .nia-case-study-panel,
+        .nia-tech-group {
+          break-inside: avoid;
+          box-shadow: none !important;
+          transform: none !important;
+        }
+      }
+
+      /* ---------- Reduced motion ---------- */
+      @media (prefers-reduced-motion: reduce) {
+        .nia-project-card,
+        .nia-project-card-media img,
+        .nia-featured-visual.project-preview,
+        .project-screen-scroll img,
+        .nia-case-study-panel,
+        .nia-tech-group,
+        .nia-tech-pill,
+        .nia-work-filter .nia-filter-btn,
+        #projectModal .modal-content {
+          transition: none !important;
+          transform: none !important;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -585,7 +1049,7 @@
             <div class="col-lg-6 align-self-end text-center text-lg-end">
               <img
                 class="img-fluid"
-                src="img/work-hero-placeholder.jpg"
+                src="img/work-hero.jpg"
                 alt="Abstract visualization of interconnected technology systems and data flows"
                 loading="eager"
               />
@@ -719,7 +1183,7 @@
                 </div>
                 <div class="project-screen-scroll">
                   <img
-                    src="img/projects/gunduziai-01.webp"
+                    src="img/projects/gunduziai-01.png"
                     alt="GunduziAI plant disease detection interface preview"
                     loading="lazy"
                   />
@@ -1478,10 +1942,10 @@
         "use strict";
 
         /* ============================================================
-           NIA WORK PAGE — PROJECT DATA MODEL
-           Replace this static array with API data from the future
-           NIA dashboard: GET /api/projects
-           ============================================================ */
+       NIA WORK PAGE — PROJECT DATA MODEL
+       Replace this static array with API data from the future
+       NIA dashboard: GET /api/projects
+       ============================================================ */
         const projects = [
           {
             id: "gunduziai",
@@ -1507,11 +1971,8 @@
               "Django",
               "Streamlit",
             ],
-            image: "img/projects/gunduziai-01.webp",
-            screenshots: [
-              "img/projects/gunduziai-01.webp",
-              "img/projects/gunduziai-02.webp",
-            ],
+            image: "img/projects/gunduziai-01.png",
+            screenshots: ["img/projects/gunduziai-01.png"],
             demoUrl: "",
             githubUrl: "",
             caseStudyUrl: "",
@@ -1540,8 +2001,8 @@
               "PostgreSQL",
               "JavaScript",
             ],
-            image: "img/projects/autovaluator-01.webp",
-            screenshots: ["img/projects/autovaluator-01.webp"],
+            image: "img/projects/autovaluator-01.png",
+            screenshots: ["img/projects/autovaluator-01.png"],
             demoUrl: "",
             githubUrl: "",
             caseStudyUrl: "",
@@ -1570,8 +2031,8 @@
               "ETL",
               "Data Visualization",
             ],
-            image: "img/projects/data-intelligence-01.webp",
-            screenshots: ["img/projects/data-intelligence-01.webp"],
+            image: "img/projects/data-intelligence-01.png",
+            screenshots: ["img/projects/data-intelligence-01.png"],
             demoUrl: "",
             githubUrl: "",
             caseStudyUrl: "",
@@ -1601,8 +2062,8 @@
               "Vector Search",
               "PostgreSQL",
             ],
-            image: "img/projects/ai-ops-01.webp",
-            screenshots: ["img/projects/ai-ops-01.webp"],
+            image: "img/projects/ai-ops-01.png",
+            screenshots: ["img/projects/ai-ops-01.png"],
             demoUrl: "",
             githubUrl: "",
             caseStudyUrl: "",
@@ -1631,8 +2092,8 @@
               "REST APIs",
               "Cloud Infrastructure",
             ],
-            image: "img/projects/business-ops-01.webp",
-            screenshots: ["img/projects/business-ops-01.webp"],
+            image: "img/projects/business-ops-01.png",
+            screenshots: ["img/projects/business-ops-01.png"],
             demoUrl: "",
             githubUrl: "",
             caseStudyUrl: "",
@@ -1640,7 +2101,7 @@
           {
             id: "data-pipeline",
             slug: "data-pipeline",
-            title: "Data Pipeline &amp; Intelligence Architecture",
+            title: "Data Pipeline & Intelligence Architecture",
             category: "data",
             categoryLabel: "DATA ENGINEERING",
             industry: "",
@@ -1662,8 +2123,8 @@
               "Docker",
               "Cloud",
             ],
-            image: "img/projects/data-pipeline-01.webp",
-            screenshots: ["img/projects/data-pipeline-01.webp"],
+            image: "img/projects/data-pipeline-01.png",
+            screenshots: ["img/projects/data-pipeline-01.png"],
             demoUrl: "",
             githubUrl: "",
             caseStudyUrl: "",
@@ -1673,7 +2134,7 @@
             slug: "ai-web-app",
             title: "AI-Powered Web Application",
             category: "web-app",
-            categoryLabel: "WEB &amp; APPLICATION DEVELOPMENT",
+            categoryLabel: "WEB & APPLICATION DEVELOPMENT",
             industry: "",
             status: "Prototype",
             featured: false,
@@ -1694,8 +2155,8 @@
               "AI APIs",
               "PostgreSQL",
             ],
-            image: "img/projects/ai-web-app-01.webp",
-            screenshots: ["img/projects/ai-web-app-01.webp"],
+            image: "img/projects/ai-web-app-01.png",
+            screenshots: ["img/projects/ai-web-app-01.png"],
             demoUrl: "",
             githubUrl: "",
             caseStudyUrl: "",
@@ -1703,8 +2164,8 @@
         ];
 
         /* ============================================================
-           RENDER PROJECT CARDS
-           ============================================================ */
+       RENDER PROJECT CARDS
+       ============================================================ */
         const projectGrid = document.getElementById("projectGrid");
         const emptyState = document.getElementById("emptyState");
 
@@ -1745,20 +2206,20 @@
                   : "bg-dark";
 
             col.innerHTML =
-              '<article class="nia-project-card bg-white rounded border h-100 overflow-hidden">' +
+              '<article class="nia-project-card bg-white rounded border overflow-hidden">' +
               '<div class="nia-project-card-media">' +
               '<img src="' +
               project.image +
               '" alt="' +
               project.title +
-              ' preview" loading="lazy" width="600" height="360">' +
+              ' preview" loading="lazy" width="600" height="400">' +
               '<span class="badge ' +
               statusBadgeClass +
               ' nia-status-badge">' +
               project.status +
               "</span>" +
               "</div>" +
-              '<div class="p-4">' +
+              '<div class="p-4 d-flex flex-column flex-grow-1">' +
               '<small class="text-primary fw-bold d-block mb-2" style="letter-spacing:1px;">' +
               project.categoryLabel +
               "</small>" +
@@ -1771,7 +2232,7 @@
               '<div class="nia-tech-pills mb-3">' +
               techPills +
               "</div>" +
-              '<button type="button" class="btn btn-sm btn-outline-primary rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#projectModal" data-project="' +
+              '<button type="button" class="btn btn-sm btn-outline-primary rounded-pill px-3 mt-auto align-self-start" data-bs-toggle="modal" data-bs-target="#projectModal" data-project="' +
               project.id +
               '">View Project <i class="fa fa-arrow-right ms-1"></i></button>' +
               "</div>" +
@@ -1787,8 +2248,8 @@
         }
 
         /* ============================================================
-           FILTERING
-           ============================================================ */
+       FILTERING
+       ============================================================ */
         const filterButtons = document.querySelectorAll(".nia-filter-btn");
 
         filterButtons.forEach(function (btn) {
@@ -1817,8 +2278,8 @@
         });
 
         /* ============================================================
-           PROJECT MODAL
-           ============================================================ */
+       PROJECT MODAL
+       ============================================================ */
         const projectModal = document.getElementById("projectModal");
         if (projectModal) {
           projectModal.addEventListener("show.bs.modal", function (event) {
@@ -1891,8 +2352,8 @@
         }
 
         /* ============================================================
-           INITIAL RENDER
-           ============================================================ */
+       INITIAL RENDER
+       ============================================================ */
         renderProjects(projects);
       })();
     </script>

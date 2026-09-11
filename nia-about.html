@@ -97,6 +97,689 @@
       }
     </script>
     <link rel="icon" href="img/icon-logo.JPG" type="image/png" />
+    <style>
+      /* ============================================================
+   NIA ABOUT PAGE — PAGE-SCOPED STYLES
+   Fully responsive, sleek, with device-aware typography and
+   interactive sections for Who We Are, Mission, Team, Values,
+   and Careers.
+   ============================================================ */
+
+      /* ---------- About Hero ---------- */
+      .hero-header {
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-header .display-4 {
+        line-height: 1.15;
+        letter-spacing: -0.5px;
+      }
+      .hero-header img.img-fluid {
+        max-height: 460px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+      }
+      .hero-header .btn {
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          background-color 0.25s ease,
+          color 0.25s ease;
+      }
+      .hero-header .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+      }
+
+      /* ---------- Brand Statement ---------- */
+      .container-fluid .display-6 {
+        line-height: 1.3;
+        letter-spacing: -0.3px;
+      }
+
+      /* ---------- Sticky About Navigator (Desktop) ---------- */
+      .nia-about-nav-wrap {
+        position: sticky;
+        top: 75px;
+        z-index: 900;
+        background: #fff;
+        border-bottom: 1px solid rgba(20, 24, 62, 0.08);
+        box-shadow: 0 4px 12px rgba(20, 24, 62, 0.04);
+      }
+      .nia-about-nav {
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .nia-about-nav::-webkit-scrollbar {
+        display: none;
+      }
+      .nia-about-nav-link {
+        position: relative;
+        padding: 10px 18px;
+        font-size: 0.92rem;
+        font-weight: 500;
+        color: #555;
+        text-decoration: none;
+        border-radius: 50px;
+        transition:
+          color 0.25s ease,
+          background-color 0.25s ease;
+        white-space: nowrap;
+      }
+      .nia-about-nav-link:hover {
+        color: var(--primary, #1363c6);
+        background: rgba(19, 99, 198, 0.06);
+      }
+      .nia-about-nav-link.active {
+        color: var(--primary, #1363c6);
+        background: rgba(19, 99, 198, 0.1);
+        font-weight: 600;
+      }
+      .nia-about-nav-link.active::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 2px;
+        transform: translateX(-50%);
+        width: 24px;
+        height: 2px;
+        background: var(--primary, #1363c6);
+        border-radius: 2px;
+      }
+      .nia-about-nav-link:focus-visible {
+        outline: 2px solid var(--primary, #1363c6);
+        outline-offset: 2px;
+      }
+
+      /* ---------- Mobile About Navigator ---------- */
+      .nia-about-nav-wrap-mobile {
+        position: sticky;
+        top: 0;
+        z-index: 900;
+        border-bottom: 1px solid rgba(20, 24, 62, 0.06);
+        box-shadow: 0 2px 8px rgba(20, 24, 62, 0.04);
+      }
+      .nia-about-nav-mobile {
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 4px;
+      }
+      .nia-about-nav-mobile::-webkit-scrollbar {
+        display: none;
+      }
+      .nia-about-mobile-link {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        font-size: 0.82rem;
+        font-weight: 500;
+        padding: 8px 16px !important;
+        transition:
+          transform 0.2s ease,
+          background-color 0.2s ease,
+          color 0.2s ease;
+      }
+      .nia-about-mobile-link:hover {
+        transform: translateY(-1px);
+      }
+
+      /* ---------- About Section ---------- */
+      .nia-about-section {
+        scroll-margin-top: 120px;
+      }
+      .nia-about-label {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--primary, #1363c6);
+        padding: 6px 14px;
+        background: rgba(19, 99, 198, 0.08);
+        border-radius: 50px;
+        margin-bottom: 12px;
+      }
+      .nia-about-section h2 {
+        line-height: 1.25;
+        letter-spacing: -0.3px;
+        color: var(--dark, #14183e);
+      }
+      .nia-about-alt {
+        background: var(--light, #f4f7fe);
+      }
+
+      /* ---------- Capability Map ---------- */
+      .nia-capability-map {
+        border-color: rgba(20, 24, 62, 0.08) !important;
+        transition: box-shadow 0.35s ease;
+      }
+      .nia-capability-map:hover {
+        box-shadow: 0 20px 45px rgba(19, 99, 198, 0.08);
+      }
+      .nia-cap-node {
+        padding: 18px 12px;
+        border-radius: 12px;
+        background: rgba(244, 247, 254, 0.6);
+        border: 1px solid transparent;
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease,
+          background-color 0.3s ease,
+          box-shadow 0.3s ease;
+        height: 100%;
+      }
+      .nia-cap-node:hover {
+        transform: translateY(-4px);
+        border-color: var(--primary, #1363c6);
+        background: #fff;
+        box-shadow: 0 12px 24px rgba(19, 99, 198, 0.1);
+      }
+      .nia-cap-node i {
+        font-size: 1.75rem;
+        display: block;
+      }
+      .nia-cap-node .fw-bold {
+        font-size: 0.9rem;
+        color: var(--dark, #14183e);
+        margin-bottom: 4px;
+      }
+
+      /* ---------- How We Think Cards ---------- */
+      .bg-light .rounded.border.h-100 {
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .bg-light .rounded.border.h-100:hover {
+        transform: translateY(-4px);
+        border-color: var(--primary, #1363c6) !important;
+        box-shadow: 0 16px 36px rgba(19, 99, 198, 0.08);
+      }
+      .bg-light .rounded.border.h-100 h5 {
+        color: var(--dark, #14183e);
+        font-weight: 600;
+      }
+
+      /* ---------- NIA Equation ---------- */
+      .nia-equation {
+        border-color: rgba(20, 24, 62, 0.08) !important;
+        background: linear-gradient(
+          180deg,
+          #ffffff 0%,
+          var(--light, #f4f7fe) 100%
+        );
+      }
+      .nia-eq-node {
+        padding: 14px 8px;
+        background: #fff;
+        border: 1px solid rgba(19, 99, 198, 0.2);
+        border-radius: 12px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--dark, #14183e);
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .nia-eq-node:hover {
+        transform: translateY(-3px);
+        border-color: var(--primary, #1363c6);
+        box-shadow: 0 10px 24px rgba(19, 99, 198, 0.1);
+      }
+      .nia-eq-result {
+        display: inline-block;
+        padding: 12px 32px;
+        background: rgba(19, 99, 198, 0.1);
+        color: var(--primary, #1363c6);
+        font-weight: 700;
+        font-size: 1.05rem;
+        border-radius: 50px;
+        letter-spacing: 0.3px;
+      }
+      .nia-eq-final {
+        background: var(--primary, #1363c6);
+        color: #fff;
+        box-shadow: 0 12px 30px rgba(19, 99, 198, 0.25);
+      }
+
+      /* ---------- Founder Profile ---------- */
+      .nia-founder-visual {
+        border-radius: 16px;
+        border: 1px solid rgba(20, 24, 62, 0.06);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .nia-founder-visual:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 45px rgba(19, 99, 198, 0.08);
+      }
+      .nia-founder-avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        border: 3px solid rgba(19, 99, 198, 0.15);
+        box-shadow: 0 10px 24px rgba(19, 99, 198, 0.1);
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
+      }
+      .nia-founder-visual:hover .nia-founder-avatar {
+        transform: scale(1.05);
+        box-shadow: 0 14px 32px rgba(19, 99, 198, 0.18);
+      }
+
+      /* ---------- Tech Pills (reused from Work page) ---------- */
+      .nia-tech-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .nia-tech-pill {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 50px;
+        background: var(--light, #f4f7fe);
+        color: var(--dark, #14183e);
+        font-size: 0.82rem;
+        font-weight: 500;
+        border: 1px solid rgba(19, 99, 198, 0.12);
+        transition:
+          background-color 0.2s ease,
+          color 0.2s ease,
+          border-color 0.2s ease,
+          transform 0.2s ease;
+      }
+      .nia-tech-pill:hover {
+        background: var(--primary, #1363c6);
+        color: #fff;
+        border-color: var(--primary, #1363c6);
+        transform: translateY(-1px);
+      }
+
+      /* ---------- Team Philosophy / Values Cards ---------- */
+      .nia-value-card {
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.35s ease,
+          border-color 0.35s ease,
+          box-shadow 0.35s ease;
+      }
+      .nia-value-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 0;
+        background: var(--primary, #1363c6);
+        transition: height 0.35s ease;
+      }
+      .nia-value-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--primary, #1363c6) !important;
+        box-shadow: 0 18px 40px rgba(19, 99, 198, 0.1);
+      }
+      .nia-value-card:hover::before {
+        height: 100%;
+      }
+      .nia-value-num {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: var(--primary, #1363c6);
+        padding: 4px 12px;
+        background: rgba(19, 99, 198, 0.08);
+        border-radius: 50px;
+        margin-bottom: 12px;
+      }
+      .nia-value-card h4 {
+        color: var(--dark, #14183e);
+        font-size: 1.15rem;
+        letter-spacing: 0.5px;
+      }
+
+      /* ---------- Empty Editorial (Careers) ---------- */
+      .nia-empty-editorial {
+        background: linear-gradient(
+          180deg,
+          #ffffff 0%,
+          var(--light, #f4f7fe) 100%
+        );
+        border-color: rgba(19, 99, 198, 0.15) !important;
+        border-style: dashed !important;
+      }
+      .nia-empty-editorial i {
+        color: var(--primary, #1363c6);
+      }
+      .nia-empty-editorial h4 {
+        color: var(--dark, #14183e);
+      }
+
+      /* ---------- Careers Talent Cards ---------- */
+      #careers .p-3.bg-white.rounded.border {
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease,
+          background-color 0.3s ease;
+      }
+      #careers .p-3.bg-white.rounded.border:hover {
+        transform: translateY(-4px);
+        border-color: var(--primary, #1363c6) !important;
+        box-shadow: 0 12px 28px rgba(19, 99, 198, 0.08);
+      }
+      #careers .p-3.bg-white.rounded.border i {
+        font-size: 1.5rem;
+        display: block;
+      }
+
+      /* ---------- Cross-Link Cards ---------- */
+      a.p-4.bg-white.rounded.border.h-100.text-decoration-none {
+        transition:
+          transform 0.35s ease,
+          border-color 0.35s ease,
+          box-shadow 0.35s ease;
+      }
+      a.p-4.bg-white.rounded.border.h-100.text-decoration-none:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary, #1363c6) !important;
+        box-shadow: 0 20px 45px rgba(19, 99, 198, 0.1);
+      }
+
+      /* ---------- Final CTA ---------- */
+      .bg-primary.text-white h2.display-5 {
+        line-height: 1.2;
+      }
+
+      /* ============================================================
+   RESPONSIVE — device-aware typography and spacing
+   ============================================================ */
+
+      /* Large Desktop (≥1400px) */
+      @media (min-width: 1400px) {
+        .hero-header .display-4 {
+          font-size: 3.25rem;
+        }
+        .nia-about-section h2 {
+          font-size: 2rem;
+        }
+        .container-fluid .display-6 {
+          font-size: 2.25rem;
+        }
+      }
+
+      /* Standard Desktop (992–1399px) */
+      @media (min-width: 992px) and (max-width: 1399.98px) {
+        .hero-header .display-4 {
+          font-size: 2.5rem;
+        }
+        .nia-about-section h2 {
+          font-size: 1.75rem;
+        }
+        .container-fluid .display-6 {
+          font-size: 1.9rem;
+        }
+        .hero-header img.img-fluid {
+          max-height: 380px;
+        }
+      }
+
+      /* Tablet (768–991px) */
+      @media (min-width: 768px) and (max-width: 991.98px) {
+        .hero-header {
+          text-align: center;
+        }
+        .hero-header .display-4 {
+          font-size: 2.1rem;
+        }
+        .hero-header img.img-fluid {
+          max-height: 320px;
+          margin-top: 24px;
+        }
+        .nia-about-section h2 {
+          font-size: 1.6rem;
+        }
+        .container-fluid .display-6 {
+          font-size: 1.6rem;
+        }
+        .nia-about-nav-wrap {
+          top: 70px;
+        }
+        .nia-eq-result {
+          font-size: 0.95rem;
+          padding: 10px 24px;
+        }
+        .nia-founder-avatar {
+          width: 100px;
+          height: 100px;
+        }
+        .nia-founder-avatar i {
+          font-size: 2rem !important;
+        }
+      }
+
+      /* Mobile Landscape / Small Tablet (576–767px) */
+      @media (min-width: 576px) and (max-width: 767.98px) {
+        .hero-header .display-4 {
+          font-size: 1.85rem;
+        }
+        .hero-header img.img-fluid {
+          max-height: 280px;
+        }
+        .nia-about-section h2 {
+          font-size: 1.45rem;
+        }
+        .container-fluid .display-6 {
+          font-size: 1.4rem;
+        }
+        .nia-about-section {
+          scroll-margin-top: 100px;
+        }
+        .nia-eq-node {
+          font-size: 0.85rem;
+          padding: 12px 6px;
+        }
+        .nia-eq-result {
+          font-size: 0.9rem;
+          padding: 10px 22px;
+        }
+      }
+
+      /* Mobile (375–575px) */
+      @media (min-width: 375px) and (max-width: 575.98px) {
+        .hero-header {
+          text-align: center;
+        }
+        .hero-header .display-4 {
+          font-size: 1.65rem;
+        }
+        .hero-header p {
+          font-size: 0.95rem;
+        }
+        .hero-header img.img-fluid {
+          max-height: 240px;
+          margin-top: 20px;
+        }
+        .hero-header .btn {
+          font-size: 0.9rem;
+          padding: 10px 22px !important;
+        }
+        .nia-about-section h2 {
+          font-size: 1.3rem;
+        }
+        .container-fluid .display-6 {
+          font-size: 1.2rem;
+        }
+        .nia-about-section {
+          scroll-margin-top: 90px;
+        }
+        .nia-about-label {
+          font-size: 0.68rem;
+          padding: 5px 12px;
+        }
+        .nia-value-card h4 {
+          font-size: 1rem;
+        }
+        .nia-value-num {
+          font-size: 0.68rem;
+          padding: 3px 10px;
+        }
+        .nia-cap-node {
+          padding: 14px 10px;
+        }
+        .nia-cap-node i {
+          font-size: 1.5rem;
+        }
+        .nia-cap-node .fw-bold {
+          font-size: 0.82rem;
+        }
+        .nia-cap-node p {
+          font-size: 0.75rem;
+        }
+        .nia-eq-node {
+          font-size: 0.8rem;
+          padding: 10px 4px;
+        }
+        .nia-eq-result {
+          font-size: 0.85rem;
+          padding: 8px 18px;
+        }
+        .nia-founder-avatar {
+          width: 90px;
+          height: 90px;
+        }
+        .nia-founder-avatar i {
+          font-size: 1.75rem !important;
+        }
+        .nia-tech-pill {
+          font-size: 0.75rem;
+          padding: 5px 12px;
+        }
+        .nia-about-mobile-link {
+          font-size: 0.78rem;
+          padding: 7px 14px !important;
+        }
+        .bg-primary .btn-lg {
+          font-size: 0.92rem;
+          padding: 12px 28px !important;
+        }
+      }
+
+      /* Small Mobile (320–374px) */
+      @media (max-width: 374.98px) {
+        .hero-header .display-4 {
+          font-size: 1.45rem;
+        }
+        .hero-header p {
+          font-size: 0.9rem;
+        }
+        .hero-header img.img-fluid {
+          max-height: 200px;
+        }
+        .hero-header .btn {
+          font-size: 0.85rem;
+          padding: 9px 18px !important;
+          display: block;
+          width: 100%;
+          margin: 0 0 10px 0 !important;
+        }
+        .nia-about-section h2 {
+          font-size: 1.15rem;
+        }
+        .container-fluid .display-6 {
+          font-size: 1.1rem;
+        }
+        .nia-about-label {
+          font-size: 0.65rem;
+          padding: 4px 10px;
+        }
+        .nia-value-card h4 {
+          font-size: 0.95rem;
+        }
+        .nia-cap-node i {
+          font-size: 1.35rem;
+        }
+        .nia-cap-node .fw-bold {
+          font-size: 0.78rem;
+        }
+        .nia-cap-node p {
+          font-size: 0.72rem;
+        }
+        .nia-eq-node {
+          font-size: 0.75rem;
+          padding: 8px 3px;
+        }
+        .nia-eq-result {
+          font-size: 0.8rem;
+          padding: 7px 15px;
+        }
+        .nia-founder-avatar {
+          width: 80px;
+          height: 80px;
+        }
+        .nia-founder-avatar i {
+          font-size: 1.5rem !important;
+        }
+        .nia-about-mobile-link {
+          font-size: 0.74rem;
+          padding: 6px 12px !important;
+        }
+        .bg-primary .btn-lg {
+          font-size: 0.85rem;
+          padding: 11px 22px !important;
+          display: block;
+          width: 100%;
+          margin: 0 0 12px 0 !important;
+        }
+      }
+
+      /* ---------- Print ---------- */
+      @media print {
+        .nia-about-nav-wrap,
+        .nia-about-nav-wrap-mobile,
+        .back-to-top,
+        .sticky-top,
+        .footer {
+          display: none !important;
+        }
+        .nia-about-section {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+        a {
+          text-decoration: none;
+          color: #000;
+        }
+      }
+
+      /* ---------- Reduced Motion ---------- */
+      @media (prefers-reduced-motion: reduce) {
+        .hero-header .btn,
+        .nia-cap-node,
+        .nia-eq-node,
+        .nia-value-card,
+        .nia-founder-visual,
+        .nia-founder-avatar,
+        .nia-tech-pill,
+        .nia-about-nav-link,
+        .nia-about-mobile-link,
+        a.p-4.bg-white.rounded.border.h-100.text-decoration-none,
+        #careers .p-3.bg-white.rounded.border {
+          transition: none !important;
+          transform: none !important;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -589,6 +1272,7 @@
               <a
                 href="#who-we-are"
                 class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight"
+                id="start-btn"
                 >Explore Who We Are <i class="fa fa-arrow-right ms-1"></i
               ></a>
               <a
@@ -1702,9 +2386,9 @@
         "use strict";
 
         /* ============================================================
-           ABOUT — Active section detection for sticky navigator
-           Uses IntersectionObserver (lightweight, no scroll spam)
-           ============================================================ */
+       ABOUT — Active section detection for sticky navigator
+       Uses IntersectionObserver (lightweight, no scroll spam)
+       ============================================================ */
         const aboutSections = document.querySelectorAll(".nia-about-section");
         const desktopNavLinks = document.querySelectorAll(
           ".nia-about-nav-link",
@@ -1764,8 +2448,8 @@
         }
 
         /* ============================================================
-           Deep-link offset adjustment
-           ============================================================ */
+       Deep-link offset adjustment
+       ============================================================ */
         if (window.location.hash) {
           window.setTimeout(function () {
             const target = document.querySelector(window.location.hash);
@@ -1781,12 +2465,69 @@
         }
 
         /* ============================================================
-           Dynamic footer year
-           ============================================================ */
+       Mobile sticky nav auto-hide on scroll down / show on scroll up
+       (only for small screens to save vertical space)
+       ============================================================ */
+        const mobileNav = document.querySelector(".nia-about-nav-wrap-mobile");
+        if (mobileNav && window.innerWidth < 992) {
+          let lastScroll = window.pageYOffset;
+          let ticking = false;
+
+          window.addEventListener(
+            "scroll",
+            function () {
+              if (!ticking) {
+                window.requestAnimationFrame(function () {
+                  const currentScroll = window.pageYOffset;
+                  if (currentScroll > lastScroll && currentScroll > 200) {
+                    mobileNav.style.transform = "translateY(-100%)";
+                  } else {
+                    mobileNav.style.transform = "translateY(0)";
+                  }
+                  lastScroll = currentScroll;
+                  ticking = false;
+                });
+                ticking = true;
+              }
+            },
+            { passive: true },
+          );
+        }
+
+        /* ============================================================
+       Dynamic footer year
+       ============================================================ */
         const yearEl = document.getElementById("currentYear");
         if (yearEl) {
           yearEl.textContent = new Date().getFullYear();
         }
+
+        /* ============================================================
+       Smooth scroll for internal hash links (respect reduced motion)
+       ============================================================ */
+        const prefersReducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+        document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+          link.addEventListener("click", function (e) {
+            const href = this.getAttribute("href");
+            if (href === "#" || href.length < 2) return;
+            const target = document.querySelector(href);
+            if (!target) return;
+            e.preventDefault();
+            const offset = 110;
+            const top =
+              target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({
+              top: top,
+              behavior: prefersReducedMotion ? "auto" : "smooth",
+            });
+            // Update URL without jumping
+            if (history.pushState) {
+              history.pushState(null, "", href);
+            }
+          });
+        });
       })();
     </script>
   </body>

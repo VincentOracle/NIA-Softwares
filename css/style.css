@@ -682,6 +682,10 @@ h6,
         right: 20px;
         bottom: 20px;
     }
+
+    #start-btn{
+        margin: 10px 0;
+    }
 }
 
 /* Reduced motion support */

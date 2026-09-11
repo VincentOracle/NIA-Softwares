@@ -1,9 +1,582 @@
-  =>  Template Name    : AI.Tech - Artificial Intelligence HTML Template
 
-  =>  Template Link    : https://htmlcodex.com/artificial-intelligence-html-template
+---
 
-  =>  Template License : https://htmlcodex.com/license (or read the LICENSE.txt file)
+# `README.txt`
 
-  =>  Template Author  : HTML Codex
+```text
+NIA SOFTWARES
+AI, DATA & TECHNOLOGY AGENCY
 
-  =>  Author Website   : https://htmlcodex.com
+Technology with purpose.
+
+
+============================================================
+ABOUT NIA SOFTWARES
+============================================================
+
+NIA Softwares is an AI, Data & Technology Agency focused on
+building intelligent systems for real-world problems.
+
+We combine artificial intelligence, software engineering,
+data, automation, and systems thinking to help organizations
+solve complex problems, improve operations, and make better
+decisions.
+
+
+============================================================
+BRAND
+============================================================
+
+Company:
+NIA Softwares
+
+Descriptor:
+AI, Data & Technology Agency
+
+Brand Philosophy:
+Technology with purpose.
+
+Founder & CEO:
+Ezra O.
+
+Vision:
+To build a world where intelligent technology makes complex
+problems simpler and better decisions possible.
+
+Mission:
+To help organizations solve real-world problems by combining
+artificial intelligence, data, software, and systems thinking
+into practical, impactful solutions.
+
+
+============================================================
+CORE VALUES
+============================================================
+
+PURPOSE
+We build with intention.
+
+EXCELLENCE
+We pursue mastery.
+
+CURIOSITY
+We learn, question, and adapt.
+
+PROBLEM-SOLVING
+We turn complexity into solutions.
+
+IMPACT
+We build technology that makes a difference.
+
+
+============================================================
+SERVICES
+============================================================
+
+NIA Softwares provides services across:
+
+1. AI & Machine Learning
+2. AI Agents & Automation
+3. Data & Analytics
+4. Data Engineering
+5. Custom Software Development
+6. Web & Application Development
+7. Cloud & Infrastructure
+8. Technology Consulting
+
+
+Homepage service pillars:
+
+- AI Integration
+- Data Analytics & Intelligence
+- Digital Solutions
+- Automation
+- Systems & Technology Consulting
+
+
+============================================================
+INDUSTRIES
+============================================================
+
+NIA Softwares is positioned to support:
+
+- Financial Services
+- Healthcare
+- Education
+- Agriculture
+- Government & Public Sector
+- Logistics & Transport
+- Retail & E-commerce
+- NGOs & Development
+
+
+============================================================
+WEBSITE PAGES
+============================================================
+
+Home:
+index.html
+
+Services:
+nia-services.html
+
+Industries:
+nia-industries.html
+
+Our Work:
+nia-work.html
+
+Approach:
+nia-approach.html
+
+Insights:
+nia-insights.html
+
+About:
+nia-about.html
+
+Contact:
+nia-contact.html
+
+FAQs:
+nia-faq.html
+
+Terms & Conditions:
+terms.html
+
+Privacy Policy:
+nia-privacy.html
+
+Cookie Policy:
+nia-cookie-policy.html
+
+
+============================================================
+WEBSITE NAVIGATION
+============================================================
+
+Services
+Industries
+Our Work
+Approach
+Insights
+About
+Contact
+
+Primary CTA:
+Start a Project
+
+
+============================================================
+DESIGN SYSTEM
+============================================================
+
+The website uses the NIA Softwares theme.
+
+Primary:
+#1363C6
+
+Secondary:
+#15ACE1
+
+Light:
+#F4F7FE
+
+Dark:
+#14183E
+
+
+The design should remain:
+
+- Premium
+- Modern
+- Clean
+- Responsive
+- Accessible
+- Professional
+- Technical
+- Human
+- Outcome-focused
+- Spacious
+
+
+============================================================
+TECHNOLOGY
+============================================================
+
+The website is primarily a lightweight frontend.
+
+Expected technologies may include:
+
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap
+- jQuery
+- Font Awesome
+- WOW.js
+
+Do not introduce a major frontend framework unless there
+is a clear architectural requirement.
+
+
+============================================================
+CONTACT INFORMATION
+============================================================
+
+NIA Softwares
+
+Founder & CEO:
+Ezra O.
+
+Location:
+Kahawa, Nairobi, Kenya
+43844-00609
+
+Phone:
++254 788 617 386
+
+Email:
+info@niasoftwares.com
+
+Website:
+https://niasoftwares.com/
+
+WhatsApp:
+https://wa.me/254788617386
+
+
+============================================================
+CURRENT CONTACT WORKFLOW
+============================================================
+
+The current website uses a visitor-controlled WhatsApp flow.
+
+Visitor
+  |
+  v
+Contact / Start a Project Form
+  |
+  v
+Website prepares WhatsApp message
+  |
+  v
+Visitor reviews message
+  |
+  v
+Visitor chooses whether to send
+  |
+  v
+WhatsApp
+  |
+  v
+NIA Softwares
+
+
+IMPORTANT:
+
+The current website should NOT claim that enquiries are stored
+in a backend database or dashboard.
+
+A dashboard may be implemented in the future.
+
+
+============================================================
+PROJECT CONTENT
+============================================================
+
+The Our Work section includes:
+
+- Case Studies
+- Projects
+- Client Results
+
+Do not fabricate:
+
+- clients
+- projects
+- testimonials
+- statistics
+- awards
+- partnerships
+- results
+- certifications
+- guarantees
+
+
+============================================================
+FUTURE DASHBOARD
+============================================================
+
+The website is designed with future dashboard integration
+in mind.
+
+Potential future dashboard modules:
+
+- Projects
+- Case Studies
+- FAQs
+- Services
+- Industries
+- Insights
+- Research
+- Reports
+- Team
+- Careers
+- Contact Enquiries
+- Media
+- SEO
+- Settings
+
+
+Future architecture:
+
+Admin Dashboard
+      |
+      v
+Backend API
+      |
+      v
+Database
+      |
+      v
+Website Frontend
+
+
+The current website must continue functioning without the
+dashboard.
+
+
+============================================================
+FAQ
+============================================================
+
+The FAQ page is:
+
+nia-faq.html
+
+FAQ functionality may include:
+
+- Search
+- Category filtering
+- Accordion questions
+- Result count
+- Empty state
+- Accessible keyboard controls
+- URL anchors
+
+FAQ data should be structured so that it can eventually be
+served from an API.
+
+
+============================================================
+PRIVACY AND COOKIE POLICY
+============================================================
+
+The website includes:
+
+- terms.html
+- nia-privacy.html
+- nia-cookie-policy.html
+
+These pages must reflect the actual website implementation.
+
+Do not claim that NIA uses analytics, advertising pixels,
+tracking systems, consent managers, third-party services,
+or specific cookies unless they are actually implemented.
+
+Privacy and cookie policies should be reviewed against the
+production website before publication.
+
+
+============================================================
+ACCESSIBILITY
+============================================================
+
+The website should support:
+
+- Keyboard navigation
+- Visible focus states
+- Screen readers
+- Semantic HTML
+- Correct heading hierarchy
+- Accessible forms
+- Accessible accordions
+- Accessible dropdowns
+- ARIA attributes where necessary
+- Sufficient contrast
+- Reduced-motion preferences
+
+
+============================================================
+RESPONSIVENESS
+============================================================
+
+Test the website at:
+
+320px
+375px
+390px
+414px
+768px
+992px
+1200px
+1440px
+1920px
+
+
+============================================================
+PERFORMANCE
+============================================================
+
+Use:
+
+- Local images
+- Lazy loading
+- Responsive images
+- Deferred non-critical JavaScript
+- Minimal dependencies
+- Optimized assets
+- Minimal DOM complexity
+
+Avoid unnecessary animations and third-party resources.
+
+
+============================================================
+IMAGES
+============================================================
+
+Images should be stored locally.
+
+Do not hotlink remote images.
+
+Use local placeholders where an image is not yet available.
+
+Example:
+
+img/project-placeholder.jpg
+
+
+============================================================
+DEVELOPMENT
+============================================================
+
+The project can be served locally using:
+
+python -m http.server 8000
+
+Then open:
+
+http://localhost:8000
+
+
+============================================================
+TESTING
+============================================================
+
+Before deployment verify:
+
+[ ] All pages load
+[ ] Navigation works
+[ ] Mobile menu works
+[ ] Dropdowns work
+[ ] Footer links work
+[ ] WhatsApp link works
+[ ] Email link works
+[ ] Phone link works
+[ ] Contact flow works
+[ ] FAQ search works
+[ ] FAQ filtering works
+[ ] Accordion works
+[ ] No console errors
+[ ] No broken links
+[ ] No missing images
+[ ] No horizontal overflow
+[ ] Keyboard navigation works
+[ ] Focus states work
+[ ] Responsive layouts work
+[ ] SEO metadata exists
+[ ] Structured data is valid where used
+[ ] Privacy Policy reflects implementation
+[ ] Cookie Policy reflects implementation
+
+
+============================================================
+CONTENT PRINCIPLES
+============================================================
+
+NIA Softwares should communicate:
+
+- Clarity
+- Technical competence
+- Practical problem-solving
+- Transparency
+- Purpose
+- Impact
+
+Avoid generic marketing clichés.
+
+Avoid unsupported claims.
+
+Do not invent business statistics or social proof.
+
+
+============================================================
+PROJECT PHILOSOPHY
+============================================================
+
+Technology should solve problems rather than create
+unnecessary complexity.
+
+Every feature should answer:
+
+"What problem does this solve?"
+
+Every technology decision should answer:
+
+"Why is this the right technology for the problem?"
+
+Every user interaction should answer:
+
+"What should the visitor be able to do next?"
+
+
+============================================================
+LICENSE
+============================================================
+
+Unless otherwise specified by NIA Softwares, the website
+source code, branding, content, graphics, and proprietary
+materials should be treated as proprietary.
+
+Do not redistribute or commercially reuse proprietary NIA
+Softwares materials without authorization.
+
+
+============================================================
+CONTACT
+============================================================
+
+NIA Softwares
+AI, Data & Technology Agency
+
+Kahawa, Nairobi, Kenya
+43844-00609
+
+Phone:
++254 788 617 386
+
+Email:
+info@niasoftwares.com
+
+Website:
+https://niasoftwares.com/
+
+WhatsApp:
+https://wa.me/254788617386
+
+
+============================================================
+NIA SOFTWARES
+Technology with purpose.
+============================================================

@@ -1,0 +1,795 @@
+/********** Template CSS **********/
+:root {
+    --primary: #1363C6;
+    --secondary: #15ACE1;
+    --light: #F4F7FE;
+    --dark: #14183E;
+}
+
+
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
+/*** Heading ***/
+h1,
+h2,
+h3,
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+h4,
+h5,
+h6,
+.fw-medium {
+    font-weight: 500 !important;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 50px;
+}
+
+
+/*** Navbar ***/
+.sticky-top {
+    top: -150px;
+    transition: .5s;
+    z-index: 999;
+}
+
+.navbar {
+    padding: 11px 0 !important;
+    height: 75px;
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-right: 25px;
+    padding: 0;
+    color: rgba(255, 255, 255, .75);
+    outline: none;
+    font-weight: 500;
+    position: relative;
+    transition: color .3s;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: rgba(255, 255, 255, 1);
+}
+
+/* Subtle underline on hover for nav links */
+.navbar .navbar-nav > .nav-item > .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--secondary);
+    transition: width .3s ease;
+}
+
+.navbar .navbar-nav > .nav-item > .nav-link:hover::after,
+.navbar .navbar-nav > .nav-item > .nav-link.active::after {
+    width: 100%;
+}
+
+/* Dropdown arrow for mega menu toggles */
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 6px;
+    font-size: 0.75rem;
+}
+
+
+/*** Mega Menu (Desktop) ***/
+.mega-menu {
+    position: static; /* so the dropdown can be full container width */
+}
+
+.mega-dropdown {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin-top: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0 0 12px 12px;
+    background: #ffffff;
+    box-shadow: 0 20px 50px rgba(20, 24, 62, .12);
+    overflow: hidden;
+}
+
+.mega-col {
+    padding: 30px 25px;
+    border-right: 1px solid rgba(20, 24, 62, .06);
+    height: 100%;
+}
+
+.mega-col:last-child {
+    border-right: none;
+}
+
+.mega-heading {
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.mega-link {
+    display: block;
+    padding: 7px 0;
+    color: #555;
+    font-size: .9rem;
+    text-decoration: none;
+    transition: color .25s, padding-left .25s;
+    border-radius: 6px;
+}
+
+.mega-link:hover {
+    color: var(--primary);
+    padding-left: 6px;
+}
+
+.mega-link.disabled {
+    color: #b5b8c2;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.mega-feature {
+    height: 100%;
+    padding: 35px 30px;
+    background: linear-gradient(135deg, var(--dark) 0%, #1d2352 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mega-feature h6 {
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+
+/*** Mobile & Tablet Navbar ***/
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav {
+        padding: 15px;
+        background: var(--primary);
+        border-radius: 0 0 12px 12px;
+        max-height: calc(100vh - 75px);
+        overflow-y: auto;
+    }
+
+    .navbar .navbar-nav .nav-link {
+        margin-right: 0;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .08);
+        color: rgba(255, 255, 255, .85);
+    }
+
+    .navbar .navbar-nav > .nav-item > .nav-link::after {
+        display: none;
+    }
+
+    /* Reset mega menu structure to simple accordion on mobile */
+    .mega-menu {
+        position: relative;
+    }
+
+    .mega-dropdown {
+        position: static;
+        box-shadow: none;
+        background: rgba(0, 0, 0, .15);
+        border-radius: 8px;
+        margin: 5px 0 10px 0;
+    }
+
+    .mega-col {
+        padding: 15px 20px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .mega-col:last-child {
+        border-bottom: none;
+    }
+
+    .mega-heading {
+        color: var(--secondary);
+        margin-bottom: 10px;
+    }
+
+    .mega-link {
+        color: rgba(255, 255, 255, .8);
+        padding: 8px 0;
+    }
+
+    .mega-link:hover {
+        color: #fff;
+        padding-left: 6px;
+    }
+
+    .mega-link.disabled {
+        color: rgba(255, 255, 255, .35);
+    }
+
+    .mega-feature {
+        display: none; /* Hide feature panel on mobile for a cleaner menu */
+    }
+}
+
+@media (min-width: 992px) {
+    /* Smooth reveal for the mega dropdown */
+    .navbar .nav-item.mega-menu .mega-dropdown {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: opacity .35s ease, visibility .35s, transform .35s ease;
+    }
+
+    .navbar .nav-item.mega-menu:hover .mega-dropdown,
+    .navbar .nav-item.mega-menu:focus-within .mega-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+
+/*** Hero Header ***/
+.hero-header {
+    margin-top: -75px;
+    background: url(../img/bg-hero.png) center center no-repeat;
+    background-size: cover;
+}
+
+.hero-header .breadcrumb-item+.breadcrumb-item::before {
+    color: var(--light);
+}
+
+
+/*** Section Title ***/
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background: var(--dark);
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 4px;
+    bottom: 0;
+    left: 50px;
+    background: var(--dark);
+}
+
+.section-title.text-center::before {
+    left: 50%;
+    margin-left: -25px;
+}
+
+.section-title.text-center::after {
+    left: 50%;
+    margin-left: 25px;
+}
+
+.section-title h6::before,
+.section-title h6::after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    top: 2px;
+    left: 0;
+    background: rgba(33, 66, 177, .5);
+}
+
+.section-title h6::after {
+    top: 5px;
+    left: 3px;
+}
+
+
+/*** About ***/
+.about-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-img::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(../img/bg-about-img.png) top left no-repeat;
+    background-size: contain;
+}
+
+
+/*** Service ***/
+.service-item {
+    position: relative;
+    padding: 45px 30px;
+    background: #FFFFFF;
+    transition: .5s;
+}
+
+.service-item:hover {
+    background: var(--primary);
+}
+
+.service-item .service-icon {
+    margin: 0 auto 20px auto;
+    width: 90px;
+    height: 90px;
+    color: var(--primary);
+    background: var(--light);
+    transition: .5s;
+}
+
+.service-item:hover .service-icon {
+    background: #FFFFFF;
+}
+
+.service-item h5,
+.service-item p {
+    transition: .5s;
+}
+
+.service-item:hover h5,
+.service-item:hover p {
+    color: #FFFFFF;
+}
+
+.service-item a.btn {
+    position: relative;
+    display: flex;
+    color: var(--primary);
+    transition: .5s;
+    z-index: 1;
+}
+
+.service-item:hover a.btn {
+    color: var(--primary);
+}
+
+.service-item a.btn::before {
+    position: absolute;
+    content: "";
+    width: 35px;
+    height: 35px;
+    top: 0;
+    left: 0;
+    border-radius: 35px;
+    background: var(--light);
+    transition: .5s;
+    z-index: -1;
+}
+
+.service-item:hover a.btn::before {
+    width: 100%;
+    background: var(--light);
+}
+
+
+/*** Case Study ***/
+.case-item img {
+    transition: .5s;
+}
+
+.case-item:hover img {
+    transform: scale(1.2);
+}
+
+.case-overlay {
+    position: absolute;
+    padding: 30px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    background: linear-gradient(rgba(20, 24, 62, 0), var(--dark));
+    z-index: 1;
+}
+
+.case-overlay small {
+    display: inline-block;
+    padding: 3px 15px;
+    color: #FFFFFF;
+    background: rgba(20, 24, 62, .7);
+    border-radius: 25px;
+    margin-bottom: 15px;
+}
+
+.case-overlay span.btn:hover {
+    color: var(--primary);
+    background: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+
+/*** NIA — What We Do Section  ***/
+.nia-what-we-do {
+    position: relative;
+    background: linear-gradient(rgba(20, 24, 62, .88), rgba(19, 99, 198, .88)),
+                url(../img/bg-hero.png) center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.nia-what-we-do .service-item {
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
+}
+
+.nia-what-we-do .service-item:hover {
+    background: var(--primary);
+    transform: translateY(-4px);
+}
+
+
+/*** NIA — Fixed Background Parallax Section ***/
+.nia-parallax-section {
+    position: relative;
+    background: linear-gradient(rgba(20, 24, 62, .75), rgba(20, 24, 62, .75)),
+                url(../img/bg-about-img.png) center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+}
+
+
+/*** NIA — Redesigned Values ***/
+.value-pill {
+    background: #ffffff;
+    border: 1px solid rgba(19, 99, 198, .12);
+    border-radius: 14px;
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    height: 100%;
+}
+
+.value-pill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(19, 99, 198, .12);
+    border-color: var(--primary);
+}
+
+.value-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--light);
+    color: var(--primary);
+    font-size: 1.25rem;
+    transition: background .35s ease, color .35s ease, transform .35s ease;
+}
+
+.value-pill:hover .value-icon {
+    background: var(--primary);
+    color: #ffffff;
+    transform: scale(1.08);
+}
+
+
+/*** NIA — Creative Contact & CTA ***/
+.nia-contact-cta {
+    position: relative;
+    background: linear-gradient(180deg, #ffffff 0%, var(--light) 100%);
+}
+
+.nia-cta-card {
+    border: 1px solid rgba(19, 99, 198, .08);
+}
+
+.nia-contact-info {
+    background: linear-gradient(135deg, var(--dark) 0%, #1d2352 100%) !important;
+    border-radius: 14px !important;
+}
+
+
+/*** Footer ***/
+.footer {
+    background: url(../img/footer.png) center center no-repeat;
+    background-size: contain;
+}
+
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,.5);
+    border: 1px solid rgba(256, 256, 256, .1);
+    border-radius: 40px;
+    transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 10px;
+    padding: 0;
+    text-align: left;
+    color: rgba(255,255,255,.5);
+    font-weight: normal;
+    transition: .3s;
+}
+
+.footer .btn.btn-link:hover {
+    color: #FFFFFF;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 14px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: rgba(255,255,255,.5);
+}
+
+.footer .copyright a:hover {
+    color: #FFFFFF;
+}
+
+.footer .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, .1);
+}
+
+.footer .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
+
+/*** Responsive Adjustments ***/
+@media (max-width: 991.98px) {
+    /* Fixed backgrounds can cause performance issues on mobile; keep them scrollable */
+    .nia-what-we-do,
+    .nia-parallax-section {
+        background-attachment: scroll;
+    }
+
+    .nia-parallax-section {
+        min-height: 260px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .value-pill {
+        padding: 20px 12px;
+    }
+
+    .value-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1rem;
+    }
+
+    .nia-contact-info {
+        padding: 30px !important;
+    }
+
+    .nia-cta-card {
+        padding: 30px !important;
+    }
+
+    .back-to-top {
+        right: 20px;
+        bottom: 20px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .nia-what-we-do,
+    .nia-parallax-section {
+        background-attachment: scroll;
+    }
+
+    .value-pill,
+    .service-item,
+    .mega-link {
+        transition: none;
+    }
+}
+
+   /* ============================================================
+   NIA SOFTWARES — PRIVACY POLICY PAGE
+   Page-specific styles. Add at the end of style.css.
+   ============================================================ */
+
+      /* ---------- Privacy Flow Diagram ---------- */
+      .nia-privacy-flow {
+        background: linear-gradient(180deg, #ffffff 0%, var(--light) 100%);
+      }
+
+      .nia-flow-step-box {
+        padding: 14px 10px;
+        background: var(--light);
+        border: 1px solid rgba(19, 99, 198, 0.15);
+        border-radius: 10px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--dark);
+        transition:
+          border-color 0.25s ease,
+          background-color 0.25s ease,
+          transform 0.25s ease;
+      }
+
+      .nia-flow-step-box:hover {
+        border-color: var(--primary);
+        transform: translateY(-2px);
+      }
+
+      .nia-flow-active {
+        background: var(--primary);
+        color: #fff;
+        border-color: var(--primary);
+      }
+
+      /* ---------- Legal Callout (Privacy-specific) ---------- */
+      .nia-legal-callout {
+        padding: 14px 18px;
+        background: rgba(19, 99, 198, 0.05);
+        border-left: 3px solid var(--primary);
+        border-radius: 0 8px 8px 0;
+        margin: 18px 0;
+      }
+
+      .nia-legal-callout p {
+        color: #444;
+      }
+
+      /* ---------- Related Legal Link Cards ---------- */
+      .nia-related-legal-link {
+        transition:
+          border-color 0.25s ease,
+          box-shadow 0.25s ease,
+          transform 0.25s ease;
+      }
+
+      .nia-related-legal-link:hover {
+        border-color: var(--primary) !important;
+        box-shadow: 0 10px 25px rgba(19, 99, 198, 0.08);
+        transform: translateY(-3px);
+      }
+
+      .nia-related-legal-link:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 3px;
+      }
+
+      /* ---------- Print styles: shared with terms ---------- */
+      @media print {
+        .nia-privacy-flow,
+        .nia-related-legal-link,
+        .nia-flow-step-box {
+          background: #fff !important;
+          border-color: #ccc !important;
+          box-shadow: none !important;
+          transform: none !important;
+        }
+
+        .nia-legal-callout {
+          background: #f5f5f5 !important;
+          border-left: 3px solid #666 !important;
+        }
+
+        body::before {
+          content: "NIA Softwares — Privacy Policy";
+        }
+      }
+
+      /* ---------- Reduced motion ---------- */
+      @media (prefers-reduced-motion: reduce) {
+        .nia-flow-step-box,
+        .nia-related-legal-link {
+          transition: none !important;
+        }
+      }

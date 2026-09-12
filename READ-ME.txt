@@ -4,17 +4,17 @@
 # `README.txt`
 
 ```text
-NIA SOFTWARES
+NIA
 AI, DATA & TECHNOLOGY AGENCY
 
 Technology with purpose.
 
 
 ============================================================
-ABOUT NIA SOFTWARES
+ABOUT NIA
 ============================================================
 
-NIA Softwares is an AI, Data & Technology Agency focused on
+NIA is an AI, Data & Technology Agency focused on
 building intelligent systems for real-world problems.
 
 We combine artificial intelligence, software engineering,
@@ -28,7 +28,7 @@ BRAND
 ============================================================
 
 Company:
-NIA Softwares
+NIA
 
 Descriptor:
 AI, Data & Technology Agency
@@ -73,7 +73,7 @@ We build technology that makes a difference.
 SERVICES
 ============================================================
 
-NIA Softwares provides services across:
+NIA provides services across:
 
 1. AI & Machine Learning
 2. AI Agents & Automation
@@ -98,7 +98,7 @@ Homepage service pillars:
 INDUSTRIES
 ============================================================
 
-NIA Softwares is positioned to support:
+NIA is positioned to support:
 
 - Financial Services
 - Healthcare
@@ -171,7 +171,7 @@ Start a Project
 DESIGN SYSTEM
 ============================================================
 
-The website uses the NIA Softwares theme.
+The website uses the NIA theme.
 
 Primary:
 #1363C6
@@ -224,7 +224,7 @@ is a clear architectural requirement.
 CONTACT INFORMATION
 ============================================================
 
-NIA Softwares
+NIA
 
 Founder & CEO:
 Ezra O.
@@ -237,7 +237,7 @@ Phone:
 +254 788 617 386
 
 Email:
-info@niasoftwares.com
+hello@niasystems.com
 
 Website:
 https://niasoftwares.com/
@@ -270,7 +270,7 @@ Visitor chooses whether to send
 WhatsApp
   |
   v
-NIA Softwares
+NIA
 
 
 IMPORTANT:
@@ -505,7 +505,7 @@ Before deployment verify:
 CONTENT PRINCIPLES
 ============================================================
 
-NIA Softwares should communicate:
+NIA should communicate:
 
 - Clarity
 - Technical competence
@@ -545,7 +545,7 @@ Every user interaction should answer:
 LICENSE
 ============================================================
 
-Unless otherwise specified by NIA Softwares, the website
+Unless otherwise specified by NIA, the website
 source code, branding, content, graphics, and proprietary
 materials should be treated as proprietary.
 
@@ -557,7 +557,7 @@ Softwares materials without authorization.
 CONTACT
 ============================================================
 
-NIA Softwares
+NIA
 AI, Data & Technology Agency
 
 Kahawa, Nairobi, Kenya
@@ -567,7 +567,7 @@ Phone:
 +254 788 617 386
 
 Email:
-info@niasoftwares.com
+hello@niasystems.com
 
 Website:
 https://niasoftwares.com/
@@ -577,6 +577,6 @@ https://wa.me/254788617386
 
 
 ============================================================
-NIA SOFTWARES
+NIA
 Technology with purpose.
 ============================================================

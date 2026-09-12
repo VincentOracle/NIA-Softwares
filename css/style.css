@@ -703,7 +703,7 @@ h6,
 }
 
    /* ============================================================
-   NIA SOFTWARES — PRIVACY POLICY PAGE
+   NIA — PRIVACY POLICY PAGE
    Page-specific styles. Add at the end of style.css.
    ============================================================ */
 
@@ -786,7 +786,7 @@ h6,
         }
 
         body::before {
-          content: "NIA Softwares — Privacy Policy";
+          content: "NIA — Privacy Policy";
         }
       }
 

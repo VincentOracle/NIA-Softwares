@@ -1,10 +1,10 @@
-# NIA Softwares
+# NIA
 
 ### AI, Data & Technology Agency
 
 > **Technology with purpose.**
 
-NIA Softwares is an AI, Data & Technology Agency focused on building intelligent systems for real-world problems.
+NIA is an AI, Data & Technology Agency focused on building intelligent systems for real-world problems.
 
 We combine **artificial intelligence, software engineering, data, automation, and systems thinking** to help organizations solve complex problems, improve operations, and make better decisions.
 
@@ -13,7 +13,7 @@ We combine **artificial intelligence, software engineering, data, automation, an
 
 ## Overview
 
-The NIA Softwares website is the company's primary digital presence and provides information about its services, industries, approach, work, insights, company background, and contact channels.
+The NIA website is the company's primary digital presence and provides information about its services, industries, approach, work, insights, company background, and contact channels.
 
 The website is designed as a modern, responsive, accessible, and performance-conscious frontend that can later be connected to a backend and administrative dashboard.
 
@@ -21,7 +21,7 @@ The current implementation is primarily a static website.
 
 ### Core objectives
 
-- Present NIA Softwares' technology capabilities clearly
+- Present NIA' technology capabilities clearly
 - Explain services and industry applications
 - Showcase completed work and case studies
 - Communicate NIA's approach to solving problems
@@ -34,7 +34,7 @@ The current implementation is primarily a static website.
 
 ## Brand
 
-**Company:** NIA Softwares  
+**Company:** NIA  
 **Descriptor:** AI, Data & Technology Agency  
 **Brand Philosophy:** Technology with purpose.
 
@@ -69,7 +69,7 @@ We build technology that makes a difference.
 
 ## Services
 
-NIA Softwares provides technology services across the following areas:
+NIA provides technology services across the following areas:
 
 1. **AI & Machine Learning**
 2. **AI Agents & Automation**
@@ -94,7 +94,7 @@ The broader homepage pillars act as umbrella concepts while the dedicated Servic
 
 ## Industries
 
-NIA Softwares is positioned to support organizations across:
+NIA is positioned to support organizations across:
 
 - Financial Services
 - Healthcare
@@ -112,7 +112,7 @@ Industry solutions should be based on the actual requirements and context of eac
 ## Website Structure
 
 ```text
-NIA SOFTwares
+NIA
 │
 ├── Home
 │

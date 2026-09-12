@@ -482,26 +482,291 @@ h6,
     border-color: #FFFFFF;
 }
 
+/* NIA — WHAT WE DO SECTION (Homepage) */
 
-/*** NIA — What We Do Section  ***/
+/* Section background */
 .nia-what-we-do {
     position: relative;
     background: linear-gradient(rgba(20, 24, 62, .88), rgba(19, 99, 198, .88)),
-                url(../img/bg-hero.png) center center no-repeat;
+                url(../img/about-img.jpg) center center no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 
+/* Grid wrapper: align left column and right grid to the same top line */
+.nia-services-grid {
+    align-items: flex-start !important;
+}
+
+/* Left column stays pinned to top of grid */
+.nia-services-grid > .col-lg-5 {
+    align-self: flex-start;
+}
+
+/* ---------- Right side: 3 x 2 uniform card grid ---------- */
+.nia-services-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;             /* equal-height rows */
+    gap: 1.5rem;
+}
+
+/* Each card column becomes a grid cell that stretches to the row height */
+.nia-services-cards > .col-md-6 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Inner row of 3 cards stacks vertically within its column */
+.nia-services-cards > .col-md-6 > .row {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);  /* equal heights for 3 cards */
+    gap: 1.5rem;
+    height: 100%;
+}
+
+/* Individual card wrapper */
+.nia-service-col {
+    display: flex;
+    height: 100%;
+}
+
+/* Base service card */
 .nia-what-we-do .service-item {
-    border-radius: 10px;
+    position: relative;
+    padding: 32px 24px;
+    background: #FFFFFF;
+    border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
+    transition: transform .35s ease, background-color .35s ease,
+                box-shadow .35s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 350px;
+    height: 100%;
+    min-height: 100%;
 }
 
-.nia-what-we-do .service-item:hover {
+/* Icon stays consistent size */
+.nia-what-we-do .service-item .service-icon {
+    margin: 0 auto 18px auto;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    background: var(--light);
+    border-radius: 50%;
+    transition: background-color .35s ease, color .35s ease,
+                transform .35s ease;
+    flex: 0 0 auto;
+}
+
+.nia-what-we-do .service-item .service-icon i {
+    font-size: 1.5rem;
+    transition: color .35s ease;
+}
+
+/* Title: fixed minimum height keeps text baseline aligned */
+.nia-what-we-do .service-item h5 {
+    color: var(--dark);
+    font-size: 1.05rem;
+    line-height: 1.35;
+    min-height: 2.7rem;                /* ~ 2 lines */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    transition: color .35s ease;
+}
+
+/* Description: flexible with a min-height so cards stay equal */
+.nia-what-we-do .service-item p {
+    color: #666;
+    font-size: .92rem;
+    line-height: 1.55;
+    margin-bottom: 20px;
+    min-height: 4.2rem;                /* ~ 3 lines */
+    transition: color .35s ease;
+}
+
+/* Card CTA button */
+.nia-what-we-do .service-item a.btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    padding: 8px 20px;
+    color: var(--primary);
+    background: transparent;
+    border: 1px solid rgba(19, 99, 198, .2);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: .85rem;
+    transition: background-color .35s ease, color .35s ease,
+                border-color .35s ease, transform .25s ease;
+    align-self: center;
+    white-space: nowrap;
+}
+
+.nia-what-we-do .service-item a.btn:hover {
     background: var(--primary);
-    transform: translateY(-4px);
+    color: #fff;
+    border-color: var(--primary);
+    transform: translateX(3px);
 }
 
+/* Hover: elevate card, invert colors */
+.nia-what-we-do .service-item:hover {
+    transform: translateY(-6px);
+    background: var(--primary);
+    box-shadow: 0 18px 40px rgba(19, 99, 198, .28);
+}
+
+.nia-what-we-do .service-item:hover .service-icon {
+    background: #ffffff;
+    transform: scale(1.05);
+}
+
+.nia-what-we-do .service-item:hover h5,
+.nia-what-we-do .service-item:hover p {
+    color: #ffffff;
+}
+
+.nia-what-we-do .service-item:hover a.btn {
+    background: #ffffff;
+    color: var(--primary);
+    border-color: #ffffff;
+}
+
+   /* RESPONSIVE — Tablet (768–991px) */
+
+@media (max-width: 991.98px) {
+    .nia-what-we-do {
+        background-attachment: scroll;   /* improve mobile performance */
+    }
+
+    .nia-services-cards {
+        gap: 1.25rem;
+    }
+
+    .nia-what-we-do .service-item {
+        padding: 28px 22px;
+    }
+
+    .nia-what-we-do .service-item .service-icon {
+        width: 72px;
+        height: 72px;
+    }
+
+    .nia-what-we-do .service-item .service-icon i {
+        font-size: 1.35rem;
+    }
+
+    .nia-what-we-do .service-item h5 {
+        font-size: 1rem;
+        min-height: 2.5rem;
+    }
+
+    .nia-what-we-do .service-item p {
+        font-size: .88rem;
+        min-height: 4rem;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — Mobile (≤767px)
+   Single column, more compact, still uniform heights
+   ============================================================ */
+@media (max-width: 767.98px) {
+    .nia-services-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .nia-services-cards > .col-md-6 > .row {
+        grid-template-rows: none;         /* let each card auto-size */
+        gap: 1rem;
+    }
+
+    .nia-service-col {
+        height: auto;
+    }
+
+    .nia-what-we-do .service-item {
+        padding: 24px 20px;
+        min-height: auto;
+    }
+
+    .nia-what-we-do .service-item .service-icon {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 14px;
+    }
+
+    .nia-what-we-do .service-item .service-icon i {
+        font-size: 1.2rem;
+    }
+
+    .nia-what-we-do .service-item h5 {
+        font-size: .98rem;
+        min-height: auto;
+        margin-bottom: 10px;
+    }
+
+    .nia-what-we-do .service-item p {
+        font-size: .88rem;
+        min-height: auto;
+        margin-bottom: 16px;
+    }
+
+    .nia-what-we-do .service-item a.btn {
+        font-size: .82rem;
+        padding: 8px 18px;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — Small phones (≤419px)
+   ============================================================ */
+@media (max-width: 419.98px) {
+    .nia-what-we-do .service-item {
+        padding: 20px 16px;
+    }
+
+    .nia-what-we-do .service-item .service-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .nia-what-we-do .service-item .service-icon i {
+        font-size: 1.1rem;
+    }
+
+    .nia-what-we-do .service-item h5 {
+        font-size: .92rem;
+    }
+
+    .nia-what-we-do .service-item p {
+        font-size: .84rem;
+    }
+}
+
+/* ============================================================
+   Reduced Motion — disable transitions
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    .nia-what-we-do .service-item,
+    .nia-what-we-do .service-item .service-icon,
+    .nia-what-we-do .service-item a.btn {
+        transition: none !important;
+        transform: none !important;
+    }
+}
 
 /*** NIA — Fixed Background Parallax Section ***/
 .nia-parallax-section {

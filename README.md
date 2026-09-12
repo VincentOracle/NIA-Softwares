@@ -15,7 +15,7 @@ We combine **artificial intelligence, software engineering, data, automation, an
 
 The NIA website is the company's primary digital presence and provides information about its services, industries, approach, work, insights, company background, and contact channels.
 
-The website is designed as a modern, responsive, accessible, and performance-conscious frontend that can later be connected to a backend and administrative dashboard.
+The NIA website is designed as a modern, responsive, accessible, and performance-conscious frontend that can later be connected to a backend and administrative dashboard.
 
 The current implementation is primarily a static website.
 

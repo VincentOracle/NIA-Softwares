@@ -73,6 +73,432 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
 
+    <!-- ============================================================
+         NIA SERVICES PAGE — PAGE-SCOPED STYLES
+         Premium, responsive, with per-service bullet markers
+         ============================================================ -->
+    <style>
+      /* ---------- Services Hero ---------- */
+      .hero-header {
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-header .display-4 {
+        line-height: 1.15;
+        letter-spacing: -0.5px;
+      }
+      .hero-header img.img-fluid {
+        max-height: 460px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+      }
+      .hero-header .btn {
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          background-color 0.25s ease,
+          color 0.25s ease;
+      }
+      .hero-header .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+      }
+
+      /* ---------- Services Index Cards ---------- */
+      .nia-service-nav-card {
+        transition:
+          transform 0.35s ease,
+          border-color 0.35s ease,
+          box-shadow 0.35s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .nia-service-nav-card::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 3px;
+        width: 0;
+        background: var(--primary, #1363c6);
+        transition: width 0.35s ease;
+      }
+      .nia-service-nav-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--primary, #1363c6) !important;
+        box-shadow: 0 20px 45px rgba(19, 99, 198, 0.12);
+      }
+      .nia-service-nav-card:hover::before {
+        width: 100%;
+      }
+      .nia-service-nav-num {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: var(--primary, #1363c6);
+        padding: 4px 12px;
+        background: rgba(19, 99, 198, 0.08);
+        border-radius: 50px;
+      }
+      .nia-service-nav-card i {
+        transition: transform 0.35s ease;
+      }
+      .nia-service-nav-card:hover i {
+        transform: scale(1.15) rotate(-5deg);
+      }
+
+      /* ---------- Service Section ---------- */
+      .nia-service-section {
+        scroll-margin-top: 120px;
+        position: relative;
+      }
+      .nia-service-alt {
+        background: var(--light, #f4f7fe);
+      }
+
+      /* ---------- Service Eyebrow ---------- */
+      .nia-service-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .nia-service-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: var(--primary, #1363c6);
+        color: #fff;
+        font-size: 0.9rem;
+        font-weight: 700;
+        box-shadow: 0 8px 20px rgba(19, 99, 198, 0.25);
+        flex-shrink: 0;
+      }
+
+      /* ---------- Service Typography ---------- */
+      .nia-service-title {
+        color: var(--dark, #14183e);
+        letter-spacing: -0.4px;
+        line-height: 1.2;
+      }
+      .nia-service-lead {
+        color: #333;
+        font-size: 1.08rem;
+        line-height: 1.65;
+        font-weight: 500;
+      }
+      .nia-service-problem {
+        color: #555;
+        line-height: 1.7;
+      }
+
+      /* ---------- Service Visual ---------- */
+      .nia-service-visual {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid rgba(20, 24, 62, 0.06);
+        box-shadow: 0 20px 45px rgba(20, 24, 62, 0.08);
+        transition:
+          transform 0.4s ease,
+          box-shadow 0.4s ease;
+      }
+      .nia-service-visual:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 28px 60px rgba(20, 24, 62, 0.12);
+      }
+      .nia-service-visual img {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: transform 0.6s ease;
+      }
+      .nia-service-visual:hover img {
+        transform: scale(1.03);
+      }
+
+      /* ---------- Capability Grid (Bullet Markers) ---------- */
+      .nia-capability-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 24px;
+        margin-top: 6px;
+      }
+      .nia-capability-tag {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 10px 12px;
+        font-size: 0.95rem;
+        color: #444;
+        border-radius: 10px;
+        background: rgba(244, 247, 254, 0.6);
+        border: 1px solid transparent;
+        transition:
+          background-color 0.25s ease,
+          border-color 0.25s ease,
+          transform 0.25s ease,
+          color 0.25s ease;
+        line-height: 1.5;
+      }
+      .nia-capability-tag:hover {
+        background: #fff;
+        border-color: var(--primary, #1363c6);
+        color: var(--dark, #14183e);
+        transform: translateY(-2px);
+      }
+      .nia-capability-tag i {
+        font-size: 0.55rem;
+        color: var(--primary, #1363c6);
+        margin-top: 0.45rem;
+        transition: transform 0.25s ease;
+      }
+      .nia-capability-tag:hover i {
+        transform: scale(1.35);
+      }
+
+      /* ---------- Deliverables List ---------- */
+      .nia-deliverables-list {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+      }
+      .nia-deliverables-list li {
+        position: relative;
+        padding-left: 26px;
+        margin-bottom: 10px;
+        color: #555;
+        line-height: 1.6;
+      }
+      .nia-deliverables-list li::before {
+        content: "\f101"; /* fa-angle-right */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--primary, #1363c6);
+        font-size: 0.85rem;
+        transition: transform 0.25s ease;
+      }
+      .nia-deliverables-list li:hover::before {
+        transform: translateX(3px);
+      }
+
+      /* ---------- Service Nav (Prev/Next) ---------- */
+      .nia-service-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .nia-service-nav-link {
+        display: inline-flex;
+        align-items: center;
+        color: var(--primary, #1363c6);
+        font-weight: 600;
+        font-size: 0.92rem;
+        text-decoration: none;
+        padding: 8px 14px;
+        border-radius: 50px;
+        transition:
+          background-color 0.25s ease,
+          color 0.25s ease,
+          transform 0.25s ease;
+      }
+      .nia-service-nav-link:hover {
+        background: rgba(19, 99, 198, 0.08);
+        color: var(--primary, #1363c6);
+        transform: translateY(-1px);
+      }
+
+      /* ---------- Capability Map (Combined) ---------- */
+      .nia-capability-map {
+        border-color: rgba(20, 24, 62, 0.08) !important;
+        transition: box-shadow 0.35s ease;
+      }
+      .nia-capability-map:hover {
+        box-shadow: 0 20px 45px rgba(19, 99, 198, 0.08);
+      }
+      .nia-cap-node {
+        padding: 16px 10px;
+        border-radius: 12px;
+        background: rgba(244, 247, 254, 0.6);
+        border: 1px solid transparent;
+        transition:
+          transform 0.3s ease,
+          border-color 0.3s ease,
+          background-color 0.3s ease,
+          box-shadow 0.3s ease;
+        height: 100%;
+      }
+      .nia-cap-node:hover {
+        transform: translateY(-4px);
+        border-color: var(--primary, #1363c6);
+        background: #fff;
+        box-shadow: 0 12px 24px rgba(19, 99, 198, 0.1);
+      }
+      .nia-cap-node i {
+        font-size: 1.6rem;
+        display: block;
+      }
+
+      /* ---------- Responsive ---------- */
+      @media (min-width: 1400px) {
+        .hero-header .display-4 {
+          font-size: 3.25rem;
+        }
+        .nia-service-title {
+          font-size: 2rem;
+        }
+      }
+      @media (min-width: 992px) and (max-width: 1399.98px) {
+        .hero-header .display-4 {
+          font-size: 2.5rem;
+        }
+        .nia-service-title {
+          font-size: 1.75rem;
+        }
+        .hero-header img.img-fluid {
+          max-height: 380px;
+        }
+      }
+      @media (min-width: 768px) and (max-width: 991.98px) {
+        .hero-header {
+          text-align: center;
+        }
+        .hero-header .display-4 {
+          font-size: 2.1rem;
+        }
+        .hero-header img.img-fluid {
+          max-height: 320px;
+          margin-top: 24px;
+        }
+        .nia-service-title {
+          font-size: 1.6rem;
+        }
+        .nia-service-section {
+          scroll-margin-top: 100px;
+        }
+        .nia-capability-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 767.98px) {
+        .hero-header {
+          text-align: center;
+        }
+        .hero-header .display-4 {
+          font-size: 1.75rem;
+        }
+        .hero-header p {
+          font-size: 0.95rem;
+        }
+        .hero-header img.img-fluid {
+          max-height: 260px;
+          margin-top: 20px;
+        }
+        .hero-header .btn {
+          font-size: 0.9rem;
+          padding: 10px 22px !important;
+        }
+        .nia-service-title {
+          font-size: 1.35rem;
+        }
+        .nia-service-lead {
+          font-size: 1rem;
+        }
+        .nia-service-section {
+          scroll-margin-top: 90px;
+        }
+        .nia-capability-grid {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
+        .nia-capability-tag {
+          padding: 9px 12px;
+          font-size: 0.92rem;
+        }
+        .nia-service-num {
+          width: 36px;
+          height: 36px;
+          font-size: 0.8rem;
+        }
+        .nia-service-nav {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .nia-service-nav-link {
+          justify-content: center;
+          width: 100%;
+        }
+        .nia-service-visual {
+          border-radius: 12px;
+        }
+      }
+      @media (max-width: 419.98px) {
+        .hero-header .display-4 {
+          font-size: 1.5rem;
+        }
+        .hero-header .btn {
+          display: block;
+          width: 100%;
+          margin: 0 0 10px 0 !important;
+        }
+        .nia-service-title {
+          font-size: 1.2rem;
+        }
+        .nia-service-num {
+          width: 32px;
+          height: 32px;
+          font-size: 0.75rem;
+        }
+        .nia-capability-tag {
+          font-size: 0.88rem;
+        }
+      }
+
+      /* ---------- Reduced Motion ---------- */
+      @media (prefers-reduced-motion: reduce) {
+        .nia-service-nav-card,
+        .nia-service-nav-card i,
+        .nia-service-visual,
+        .nia-service-visual img,
+        .nia-capability-tag,
+        .nia-capability-tag i,
+        .nia-cap-node,
+        .nia-deliverables-list li::before,
+        .hero-header .btn,
+        .nia-service-nav-link {
+          transition: none !important;
+          transform: none !important;
+        }
+      }
+
+      /* ---------- Print ---------- */
+      @media print {
+        .sticky-top,
+        .back-to-top,
+        .footer,
+        .nia-service-nav {
+          display: none !important;
+        }
+        .nia-service-visual {
+          box-shadow: none !important;
+        }
+        .nia-service-section {
+          page-break-inside: avoid;
+        }
+      }
+    </style>
+
     <!-- Structured Data -->
     <script type="application/ld+json">
       {
@@ -193,7 +619,7 @@
     </div>
     <!-- Top Bar End -->
 
-    <!-- Navbar Start (Reused from Homepage, Services Active) -->
+    <!-- Navbar Start (Services Active) -->
     <div class="container-fluid sticky-top">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark p-0">
@@ -848,36 +1274,29 @@
               <h5 class="mt-4 mb-3">What we can help with</h5>
               <div class="nia-capability-grid">
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Predictive
-                  modelling</span
+                  ><i class="fa fa-circle"></i>Predictive modelling</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Classification
-                  &amp; regression</span
+                  ><i class="fa fa-square"></i>Classification &amp;
+                  regression</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Recommendation
-                  systems</span
+                  ><i class="fa fa-dot-circle"></i>Recommendation systems</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Computer
-                  vision</span
+                  ><i class="fa fa-circle"></i>Computer vision</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Natural language
-                  processing</span
+                  ><i class="fa fa-square"></i>Natural language processing</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Generative AI
-                  integration</span
+                  ><i class="fa fa-star"></i>Generative AI integration</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>AI-powered
-                  decision support</span
+                  ><i class="fa fa-circle"></i>AI-powered decision support</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Model APIs &amp;
-                  deployment</span
+                  ><i class="fa fa-square"></i>Model APIs &amp; deployment</span
                 >
               </div>
               <h5 class="mt-4 mb-3">What we deliver</h5>
@@ -897,7 +1316,7 @@
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
               <div class="nia-service-visual">
                 <img
-                  class="img-fluid rounded"
+                  class="img-fluid"
                   src="img/services-ai-ml.jpg"
                   alt="Abstract visualization of machine learning and intelligent systems"
                   loading="lazy"
@@ -948,43 +1367,35 @@
               <h5 class="mt-4 mb-3">What we can help with</h5>
               <div class="nia-capability-grid">
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>AI agents</span
+                  ><i class="fa fa-circle"></i>AI agents</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Workflow
-                  automation</span
+                  ><i class="fa fa-square"></i>Workflow automation</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Intelligent
+                  ><i class="fa fa-dot-circle"></i>Intelligent assistants</span
+                >
+                <span class="nia-capability-tag"
+                  ><i class="fa fa-circle"></i>Document processing</span
+                >
+                <span class="nia-capability-tag"
+                  ><i class="fa fa-square"></i>Business process automation</span
+                >
+                <span class="nia-capability-tag"
+                  ><i class="fa fa-circle"></i>API integrations</span
+                >
+                <span class="nia-capability-tag"
+                  ><i class="fa fa-square"></i>Internal knowledge
                   assistants</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Document
-                  processing</span
+                  ><i class="fa fa-star"></i>Human-in-the-loop systems</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Business process
-                  automation</span
+                  ><i class="fa fa-circle"></i>Automated reporting</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>API
-                  integrations</span
-                >
-                <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Internal
-                  knowledge assistants</span
-                >
-                <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i
-                  >Human-in-the-loop systems</span
-                >
-                <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Automated
-                  reporting</span
-                >
-                <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Intelligent
-                  notifications</span
+                  ><i class="fa fa-square"></i>Intelligent notifications</span
                 >
               </div>
               <h5 class="mt-4 mb-3">What we deliver</h5>
@@ -1004,7 +1415,7 @@
             <div class="col-lg-6 order-lg-1 wow fadeIn" data-wow-delay="0.3s">
               <div class="nia-service-visual">
                 <img
-                  class="img-fluid rounded"
+                  class="img-fluid"
                   src="img/services-ai-agents-automation.jpg"
                   alt="Abstract visualization of connected workflow automation nodes"
                   loading="lazy"
@@ -1050,44 +1461,34 @@
               <h5 class="mt-4 mb-3">What we can help with</h5>
               <div class="nia-capability-grid">
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Data
-                  analysis</span
+                  ><i class="fa fa-circle"></i>Data analysis</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Business
-                  intelligence</span
+                  ><i class="fa fa-square"></i>Business intelligence</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Interactive
-                  dashboards</span
+                  ><i class="fa fa-dot-circle"></i>Interactive dashboards</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>KPI
-                  reporting</span
+                  ><i class="fa fa-circle"></i>KPI reporting</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Data
-                  visualization</span
+                  ><i class="fa fa-square"></i>Data visualization</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Statistical
-                  analysis</span
+                  ><i class="fa fa-circle"></i>Statistical analysis</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Predictive
-                  analytics</span
+                  ><i class="fa fa-star"></i>Predictive analytics</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Customer
-                  analytics</span
+                  ><i class="fa fa-square"></i>Customer analytics</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Operational
-                  analytics</span
+                  ><i class="fa fa-circle"></i>Operational analytics</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Decision-support
-                  systems</span
+                  ><i class="fa fa-square"></i>Decision-support systems</span
                 >
               </div>
               <h5 class="mt-4 mb-3">What we deliver</h5>
@@ -1107,7 +1508,7 @@
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
               <div class="nia-service-visual">
                 <img
-                  class="img-fluid rounded"
+                  class="img-fluid"
                   src="img/services-data-analytics.jpg"
                   alt="Analytical dashboard and data visualization"
                   loading="lazy"
@@ -1157,43 +1558,34 @@
               <h5 class="mt-4 mb-3">What we can help with</h5>
               <div class="nia-capability-grid">
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Data
-                  pipelines</span
+                  ><i class="fa fa-circle"></i>Data pipelines</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>ETL / ELT</span
+                  ><i class="fa fa-square"></i>ETL / ELT</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Data
-                  integration</span
+                  ><i class="fa fa-dot-circle"></i>Data integration</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Data
-                  warehousing</span
+                  ><i class="fa fa-circle"></i>Data warehousing</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Data
-                  transformation</span
+                  ><i class="fa fa-square"></i>Data transformation</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Data
-                  orchestration</span
+                  ><i class="fa fa-circle"></i>Data orchestration</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Database
-                  architecture</span
+                  ><i class="fa fa-star"></i>Database architecture</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>API-based data
-                  ingestion</span
+                  ><i class="fa fa-square"></i>API-based data ingestion</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Data quality
-                  systems</span
+                  ><i class="fa fa-circle"></i>Data quality systems</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>AI data
-                  preparation</span
+                  ><i class="fa fa-square"></i>AI data preparation</span
                 >
               </div>
               <h5 class="mt-4 mb-3">What we deliver</h5>
@@ -1214,7 +1606,7 @@
             <div class="col-lg-6 order-lg-1 wow fadeIn" data-wow-delay="0.3s">
               <div class="nia-service-visual">
                 <img
-                  class="img-fluid rounded"
+                  class="img-fluid"
                   src="img/services-data-engineering.jpg"
                   alt="Data pipeline and infrastructure visualization"
                   loading="lazy"
@@ -1289,44 +1681,34 @@
               <h5 class="mt-4 mb-3">What we can help with</h5>
               <div class="nia-capability-grid">
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Business
-                  software</span
+                  ><i class="fa fa-circle"></i>Business software</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Internal
-                  platforms</span
+                  ><i class="fa fa-square"></i>Internal platforms</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Management
-                  systems</span
+                  ><i class="fa fa-dot-circle"></i>Management systems</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Workflow
-                  systems</span
+                  ><i class="fa fa-circle"></i>Workflow systems</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Enterprise
-                  applications</span
+                  ><i class="fa fa-square"></i>Enterprise applications</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>API
-                  development</span
+                  ><i class="fa fa-circle"></i>API development</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Database-backed
-                  systems</span
+                  ><i class="fa fa-star"></i>Database-backed systems</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Role-based
-                  systems</span
+                  ><i class="fa fa-square"></i>Role-based systems</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>System
-                  integrations</span
+                  ><i class="fa fa-circle"></i>System integrations</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Software
-                  modernization</span
+                  ><i class="fa fa-square"></i>Software modernization</span
                 >
               </div>
               <h5 class="mt-4 mb-3">What we deliver</h5>
@@ -1346,7 +1728,7 @@
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
               <div class="nia-service-visual">
                 <img
-                  class="img-fluid rounded"
+                  class="img-fluid"
                   src="img/services-software.jpg"
                   alt="Software application interface and system architecture"
                   loading="lazy"
@@ -1396,44 +1778,34 @@
               <h5 class="mt-4 mb-3">What we can help with</h5>
               <div class="nia-capability-grid">
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Responsive
-                  websites</span
+                  ><i class="fa fa-circle"></i>Responsive websites</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Web
-                  applications</span
+                  ><i class="fa fa-square"></i>Web applications</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Progressive web
-                  apps</span
+                  ><i class="fa fa-dot-circle"></i>Progressive web apps</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Frontend
-                  development</span
+                  ><i class="fa fa-circle"></i>Frontend development</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Backend
-                  development</span
+                  ><i class="fa fa-square"></i>Backend development</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>API
-                  integration</span
+                  ><i class="fa fa-circle"></i>API integration</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i
-                  >Authentication</span
+                  ><i class="fa fa-star"></i>Authentication</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Dashboards &amp;
-                  portals</span
+                  ><i class="fa fa-square"></i>Dashboards &amp; portals</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Admin
-                  platforms</span
+                  ><i class="fa fa-circle"></i>Admin platforms</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Mobile-ready
-                  interfaces</span
+                  ><i class="fa fa-square"></i>Mobile-ready interfaces</span
                 >
               </div>
               <h5 class="mt-4 mb-3">What we deliver</h5>
@@ -1453,7 +1825,7 @@
             <div class="col-lg-6 order-lg-1 wow fadeIn" data-wow-delay="0.3s">
               <div class="nia-service-visual">
                 <img
-                  class="img-fluid rounded"
+                  class="img-fluid"
                   src="img/services-web-app.jpg"
                   alt="Responsive web application interface"
                   loading="lazy"
@@ -1504,43 +1876,34 @@
               <h5 class="mt-4 mb-3">What we can help with</h5>
               <div class="nia-capability-grid">
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Cloud
-                  architecture</span
+                  ><i class="fa fa-circle"></i>Cloud architecture</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Application
-                  deployment</span
+                  ><i class="fa fa-square"></i>Application deployment</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Infrastructure
-                  setup</span
+                  ><i class="fa fa-dot-circle"></i>Infrastructure setup</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Server
-                  configuration</span
+                  ><i class="fa fa-circle"></i>Server configuration</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Cloud
-                  migration</span
+                  ><i class="fa fa-square"></i>Cloud migration</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Storage &amp;
-                  compute</span
+                  ><i class="fa fa-circle"></i>Storage &amp; compute</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Application
-                  hosting</span
+                  ><i class="fa fa-star"></i>Application hosting</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Deployment
-                  automation</span
+                  ><i class="fa fa-square"></i>Deployment automation</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Monitoring</span
+                  ><i class="fa fa-circle"></i>Monitoring</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Infrastructure
-                  optimization</span
+                  ><i class="fa fa-square"></i>Infrastructure optimization</span
                 >
               </div>
               <h5 class="mt-4 mb-3">What we deliver</h5>
@@ -1561,7 +1924,7 @@
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
               <div class="nia-service-visual">
                 <img
-                  class="img-fluid rounded"
+                  class="img-fluid"
                   src="img/services-cloud.jpg"
                   alt="Abstract cloud infrastructure visualization"
                   loading="lazy"
@@ -1607,44 +1970,36 @@
               <h5 class="mt-4 mb-3">What we can help with</h5>
               <div class="nia-capability-grid">
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Technology
+                  ><i class="fa fa-circle"></i>Technology assessment</span
+                >
+                <span class="nia-capability-tag"
+                  ><i class="fa fa-square"></i>Digital transformation
+                  planning</span
+                >
+                <span class="nia-capability-tag"
+                  ><i class="fa fa-dot-circle"></i>AI opportunity
                   assessment</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Digital
-                  transformation planning</span
+                  ><i class="fa fa-circle"></i>Data strategy</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>AI opportunity
-                  assessment</span
+                  ><i class="fa fa-square"></i>Software architecture</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Data
-                  strategy</span
+                  ><i class="fa fa-circle"></i>Process analysis</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Software
-                  architecture</span
+                  ><i class="fa fa-star"></i>Automation opportunities</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Process
-                  analysis</span
+                  ><i class="fa fa-square"></i>Technology selection</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Automation
-                  opportunities</span
+                  ><i class="fa fa-circle"></i>System modernization</span
                 >
                 <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Technology
-                  selection</span
-                >
-                <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>System
-                  modernization</span
-                >
-                <span class="nia-capability-tag"
-                  ><i class="fa fa-check text-primary me-2"></i>Technical
-                  roadmaps</span
+                  ><i class="fa fa-square"></i>Technical roadmaps</span
                 >
               </div>
               <h5 class="mt-4 mb-3">What we deliver</h5>
@@ -1665,7 +2020,7 @@
             <div class="col-lg-6 order-lg-1 wow fadeIn" data-wow-delay="0.3s">
               <div class="nia-service-visual">
                 <img
-                  class="img-fluid rounded"
+                  class="img-fluid"
                   src="img/services-consulting.jpg"
                   alt="Strategy and system architecture visualization"
                   loading="lazy"
@@ -1915,7 +2270,7 @@
         <div class="copyright">
           <div class="row">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; <span id="currentYear"></span>
+              &copy; 2026 <span id="currentYear"></span>
               <a class="border-bottom text-white-50" href="index.html">NIA</a>.
               All rights reserved.
             </div>

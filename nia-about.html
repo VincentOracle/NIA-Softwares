@@ -92,7 +92,7 @@
         },
         "founder": {
           "@type": "Person",
-          "name": "Ezra O."
+          "name": "Ezra Odondi."
         }
       }
     </script>
@@ -346,6 +346,7 @@
       }
 
       /* ---------- Founder Profile ---------- */
+      /* ---------- Founder Profile ---------- */
       .nia-founder-visual {
         border-radius: 16px;
         border: 1px solid rgba(20, 24, 62, 0.06);
@@ -357,23 +358,41 @@
         transform: translateY(-4px);
         box-shadow: 0 20px 45px rgba(19, 99, 198, 0.08);
       }
+
+      /* Fixed-size circular avatar — same on every device */
       .nia-founder-avatar {
-        width: 120px;
-        height: 120px;
+        width: 180px;
+        height: 180px;
+        min-width: 180px;
+        min-height: 180px;
         border-radius: 50%;
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
         background: #fff;
-        border: 3px solid rgba(19, 99, 198, 0.15);
-        box-shadow: 0 10px 24px rgba(19, 99, 198, 0.1);
+        border: 4px solid #fff;
+        box-shadow:
+          0 12px 32px rgba(19, 99, 198, 0.18),
+          0 0 0 3px rgba(19, 99, 198, 0.12);
         transition:
           transform 0.35s ease,
           box-shadow 0.35s ease;
+        position: relative;
+      }
+      .nia-founder-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+        border-radius: 50%;
       }
       .nia-founder-visual:hover .nia-founder-avatar {
-        transform: scale(1.05);
-        box-shadow: 0 14px 32px rgba(19, 99, 198, 0.18);
+        transform: scale(1.04);
+        box-shadow:
+          0 16px 40px rgba(19, 99, 198, 0.25),
+          0 0 0 3px rgba(19, 99, 198, 0.2);
       }
 
       /* ---------- Tech Pills (reused from Work page) ---------- */
@@ -559,13 +578,6 @@
           font-size: 0.95rem;
           padding: 10px 24px;
         }
-        .nia-founder-avatar {
-          width: 100px;
-          height: 100px;
-        }
-        .nia-founder-avatar i {
-          font-size: 2rem !important;
-        }
       }
 
       /* Mobile Landscape / Small Tablet (576–767px) */
@@ -654,13 +666,7 @@
           font-size: 0.85rem;
           padding: 8px 18px;
         }
-        .nia-founder-avatar {
-          width: 90px;
-          height: 90px;
-        }
-        .nia-founder-avatar i {
-          font-size: 1.75rem !important;
-        }
+
         .nia-tech-pill {
           font-size: 0.75rem;
           padding: 5px 12px;
@@ -723,13 +729,7 @@
           font-size: 0.8rem;
           padding: 7px 15px;
         }
-        .nia-founder-avatar {
-          width: 80px;
-          height: 80px;
-        }
-        .nia-founder-avatar i {
-          font-size: 1.5rem !important;
-        }
+
         .nia-about-mobile-link {
           font-size: 0.74rem;
           padding: 6px 12px !important;
@@ -761,7 +761,14 @@
           color: #000;
         }
       }
-
+      @media (max-width: 419.98px) {
+        .nia-founder-avatar {
+          width: 160px;
+          height: 160px;
+          min-width: 160px;
+          min-height: 160px;
+        }
+      }
       /* ---------- Reduced Motion ---------- */
       @media (prefers-reduced-motion: reduce) {
         .hero-header .btn,
@@ -1202,10 +1209,8 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                       <div class="mega-col">
-                        <h6 class="mega-heading">Philosophy</h6>
-                        <span class="mega-link disabled"
-                          >Technology with purpose.</span
-                        >
+                        <h6 class="mega-heading">Our Philosophy</h6>
+                        <span class="mega-lnk">"Technology with purpose"</span>
                       </div>
                     </div>
                     <div class="col-lg-6 d-none d-lg-block">
@@ -1743,33 +1748,35 @@
           </div>
 
           <!-- Founder Profile -->
+          <!-- Founder Profile -->
           <div class="row g-5 align-items-center">
             <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-              <div class="nia-founder-visual p-5 bg-light rounded text-center">
+              <div
+                class="nia-founder-visual p-4 p-lg-5 bg-light rounded text-center"
+              >
                 <div class="nia-founder-avatar mx-auto mb-3">
-                  <i class="fa fa-user-tie fa-3x text-primary"></i>
+                  <img
+                    src="img/about/founder-picture.png"
+                    alt="Ezra Odondi, Founder and CEO of NIA"
+                    loading="lazy"
+                    width="180"
+                    height="180"
+                  />
                 </div>
-                <p class="small text-muted mb-0">
-                  Founder profile image coming soon.
-                </p>
+                <p class="small text-muted mb-0 fw-semibold">Ezra Odondi</p>
+                <p class="small text-muted mb-0">Founder &amp; CEO</p>
               </div>
             </div>
             <div class="col-lg-8 wow fadeIn" data-wow-delay="0.3s">
               <span class="badge bg-primary rounded-pill mb-3"
                 >FOUNDER &amp; CEO</span
               >
-              <h3 class="mb-3">Ezra O.</h3>
+              <h3 class="mb-3">Ezra Odondi.</h3>
               <p class="mb-4">
                 Ezra leads NIA with a focus on applying technology to real
                 organizational problems. The company was founded on a simple
                 idea: technology should serve a purpose, not the other way
                 around.
-              </p>
-              <p class="text-muted mb-4">
-                <em
-                  >Verified founder biography will appear here as it is
-                  prepared.</em
-                >
               </p>
               <h6 class="mb-3">Focus areas</h6>
               <div class="nia-tech-pills">

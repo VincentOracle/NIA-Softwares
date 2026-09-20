@@ -1,6 +1,6 @@
-# NIA
+# NIA Systems. https://niasoftwares.netlify.app/
 
-### AI, Data & Technology Agency (https://niasoftwares.netlify.app/) href='https://niasoftwares.netlify.app/'
+### AI, Data & Technology Agency 
 
 > **Technology with purpose.**
 

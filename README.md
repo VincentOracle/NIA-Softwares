@@ -1,6 +1,6 @@
 # NIA
 
-### AI, Data & Technology Agency
+### AI, Data & Technology Agency (https://niasoftwares.netlify.app/) href='https://niasoftwares.netlify.app/'
 
 > **Technology with purpose.**
 
@@ -18,6 +18,9 @@ The NIA website is the company's primary digital presence and provides informati
 The NIA website is designed as a modern, responsive, accessible, and performance-conscious frontend that can later be connected to a backend and administrative dashboard.
 
 The current implementation is primarily a static website.
+
+<img width="1600" height="698" alt="image" src="https://github.com/user-attachments/assets/45c67155-6a50-48f1-823b-0e3da60ae988" />
+
 
 ### Core objectives
 
